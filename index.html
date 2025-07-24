@@ -11,6 +11,19 @@
 </head>
 
 <body>
+  <!-- Loading Screen -->
+  <div class="loading" id="loading">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-indicator">
+    <div class="scroll-progress" id="scrollProgress"></div>
+  </div>
+
+  <!-- Animated Background -->
+  <div class="particles" id="particles"></div>
+
   <div class="container">
     <div class="profile">
       <div class="profile_container">
@@ -33,34 +46,57 @@
         </div>
       </div>
     </div>
+    
     <div class="group-1">
       <div class="skills">
-        <h3 class="title">Programming languages</h3>
+        <h3 class="title">Programming Languages</h3>
         <ul class="skills_list description">
-          <li>JavaScript</li>
-          <li>TypeScript</li>
-          <li>HTML CSS</li>
-          <li>C#</li>
-          <li>C++</li>
-          <li>Python</li>
-          <li>Java</li>
+          <li class="skill_item">
+            <span>JavaScript</span>
+            <div class="skill_bar"><div class="skill_progress" style="width: 85%"></div></div>
+          </li>
+          <li class="skill_item">
+            <span>TypeScript</span>
+            <div class="skill_bar"><div class="skill_progress" style="width: 75%"></div></div>
+          </li>
+          <li class="skill_item">
+            <span>HTML/CSS</span>
+            <div class="skill_bar"><div class="skill_progress" style="width: 90%"></div></div>
+          </li>
+          <li class="skill_item">
+            <span>C#</span>
+            <div class="skill_bar"><div class="skill_progress" style="width: 80%"></div></div>
+          </li>
+          <li class="skill_item">
+            <span>C++</span>
+            <div class="skill_bar"><div class="skill_progress" style="width: 70%"></div></div>
+          </li>
+          <li class="skill_item">
+            <span>Python</span>
+            <div class="skill_bar"><div class="skill_progress" style="width: 75%"></div></div>
+          </li>
+          <li class="skill_item">
+            <span>Java</span>
+            <div class="skill_bar"><div class="skill_progress" style="width: 70%"></div></div>
+          </li>
         </ul>
       </div>
+      
       <div class="ref">
         <h3 class="title">References</h3>
-        <div class="ref_item">
+        <div class="ref_item card">
           <h4 class="ref_name">Jaap Coetzer</h4>
           <p class="description">Co-Founder of DankoSpark</p>
         </div>
-        <div class="ref_item">
+        <div class="ref_item card">
           <h4 class="ref_name">Jaco Roux</h4>
           <p class="description">Lead Developer at Senwes</p>
         </div>
-        <div class="ref_item">
+        <div class="ref_item card">
           <h4 class="ref_name">Stephan Burger</h4>
           <p class="description">Group Executive: Information Technology at Senwes</p>
         </div>
-        <div class="ref_item">
+        <div class="ref_item card">
           <h4 class="ref_name">Michael Lambert</h4>
           <p class="description">Owner of Elite Laser Tag Klerksdorp</p>
         </div>
@@ -68,25 +104,21 @@
 
       <div class="edu">
         <h3 class="title">Education</h3>
-        <div class="edu_item">
+        <div class="edu_item card">
           <p class="item_preTitle">2018-2022</p>
           <h4 class="item_title">Matric Certificate Completed</h4>
-          <p class="item_subtitle">
-            Schoonspruit High School
-          </p>
+          <p class="item_subtitle">Schoonspruit High School</p>
         </div>
-        <div class="edu_item">
+        <div class="edu_item card">
           <p class="item_preTitle">2023-2025</p>
           <h4 class="item_title">BSC in Information Technology</h4>
-          <p class="item_subtitle">
-            North West University
-          </p>
+          <p class="item_subtitle">North West University</p>
         </div>
       </div>
 
       <div class="certification">
         <h3 class="title">Certification</h3>
-        <div class="certification_item">
+        <div class="certification_item card">
           <p class="item_preTitle">2024</p>
           <h4 class="item_title">Advanced Cybersecurity and Ethical Hacking with ChatGPT</h4>
           <p class="description">
@@ -96,19 +128,20 @@
         </div>
       </div>
     </div>
+    
     <div class="group-2">
       <div class="exp">
         <h3 class="title">Experience</h3>
-        <div class="exp_item">
+        <div class="exp_item card">
           <p class="item_preTitle">2024 (Holiday Job)</p>
           <h4 class="item_title">DankoSpark</h4>
-          <p class="item_subtitle">“Shadow” Job for project</p>
-          <p class=" description">
+          <p class="item_subtitle">"Shadow" Job for project</p>
+          <p class="description">
             Did "Shadow" work for a project that I had to complete. I had to get more insight
             on Project Management and business analytics.
           </p>
         </div>
-        <div class="exp_item">
+        <div class="exp_item card">
           <p class="item_preTitle">2024 (Holiday Job)</p>
           <h4 class="item_title">Elite Laser Tag Klerksdorp</h4>
           <p class="item_subtitle">Assistant during busy holiday season</p>
@@ -118,14 +151,14 @@
             and reservations for clients who called in. I sometimes handled monetary transactions and kept proper records. 
           </p>
         </div>
-        <div class="exp_item">
+        <div class="exp_item card">
           <p class="item_preTitle">2025 (Holiday Job)</p>
           <h4 class="item_title">Senwes Head Office Klerksdorp</h4>
           <p class="item_subtitle">Software Development</p>
           <p class="description">
               I worked with the Software Developers in IT services and provided assistance on a project. 
               Myself and another student had to create a Web Application to help encrypt PDF files to make them password protected.
-              We completed this project and the rest of the development team deployed the Web App into their “My Intranet” Website 
+              We completed this project and the rest of the development team deployed the Web App into their "My Intranet" Website 
               for employees to use.
           </p>
         </div>
@@ -147,37 +180,33 @@
             <span>Travel</span>
           </div>
         </div>
-
       </div>
     </div>
+    
     <hr>
+    
     <div class="group-3">
       <div class="contact">
         <h3 class="title">Contact Information</h3>
         <div class="contact_info">
-          <p class="description">
-            Klerksdorp, South Africa
-          </p>
-          <p class="description">
-            076 279 2508
-          </p>
-          <p class="description">
-            kruger.danelle2829@gmail.com
-          </p>
+          <p class="description">📍 Klerksdorp, South Africa</p>
+          <p class="description">📱 076 279 2508</p>
+          <p class="description">✉️ kruger.danelle2829@gmail.com</p>
         </div>
       </div>
+      
       <div class="social">
         <h3 class="title">Socials</h3>
         <div class="social_items">
-          <a href="#" target="_b" class="social_item">
+          <a href="https://github.com/danellekruger" target="_blank" class="social_item">
             <i data-feather="github"></i>
             <span>/danellekruger</span>
           </a>
-          <a href="#" target="_blank" class="social_item">
+          <a href="https://www.instagram.com/_danelle.kruger_/" target="_blank" class="social_item">
             <i data-feather="instagram"></i>
             <span>/_danelle.kruger_</span>
           </a>
-          <a href="#" target="_blank" class="social_item">
+          <a href="https://www.linkedin.com/in/danelle-kruger-0462a335a/" target="_blank" class="social_item">
             <i data-feather="linkedin"></i>
             <span>/Danelle Kruger</span>
           </a>
@@ -185,9 +214,127 @@
       </div>
     </div>
   </div>
+
   <script>
-    feather.replace()
+    // Initialize Feather icons
+    feather.replace();
+
+    // Loading screen
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        document.getElementById('loading').style.opacity = '0';
+        setTimeout(() => {
+          document.getElementById('loading').style.display = 'none';
+        }, 500);
+      }, 1000);
+    });
+
+    // Scroll progress indicator
+    window.addEventListener('scroll', function() {
+      const scrollProgress = document.getElementById('scrollProgress');
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.body.offsetHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      scrollProgress.style.width = scrollPercent + '%';
+    });
+
+    // Create animated background particles
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 50;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        const size = Math.random() * 4 + 1;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Animate skill bars on scroll
+    function animateSkillBars() {
+      const skillBars = document.querySelectorAll('.skill_progress');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const width = entry.target.style.width;
+            entry.target.style.width = '0%';
+            setTimeout(() => {
+              entry.target.style.width = width;
+            }, 200);
+          }
+        });
+      });
+
+      skillBars.forEach(bar => observer.observe(bar));
+    }
+
+    // Add typing effect to title
+    function typeWriter(element, text, speed = 100) {
+      let i = 0;
+      element.innerHTML = '';
+      function type() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        }
+      }
+      type();
+    }
+
+    // Initialize animations
+    document.addEventListener('DOMContentLoaded', function() {
+      createParticles();
+      animateSkillBars();
+      
+      // Add smooth hover effects to cards
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+    });
+
+    // Add click effect to download button
+    document.querySelector('.downloadBtn').addEventListener('click', function(e) {
+      const button = e.target;
+      const ripple = document.createElement('span');
+      ripple.style.position = 'absolute';
+      ripple.style.borderRadius = '50%';
+      ripple.style.background = 'rgba(255,255,255,0.3)';
+      ripple.style.transform = 'scale(0)';
+      ripple.style.animation = 'ripple 0.6s linear';
+      ripple.style.left = (e.clientX - button.offsetLeft) + 'px';
+      ripple.style.top = (e.clientY - button.offsetTop) + 'px';
+      
+      button.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    });
+
+    // Add ripple animation CSS
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes ripple {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
   </script>
 </body>
-
 </html>
