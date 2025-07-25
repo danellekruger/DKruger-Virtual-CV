@@ -553,10 +553,29 @@
       background: rgba(255, 255, 255, 0.1);
       z-index: 1000;
     }
+    
+.scroll-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  width: 0%;
+  transition: width 0.1s ease;
+}
 
-    .scroll-progress {
-      height: 100%;
-      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-      width: 0%;
-      transition: width 0.1s ease;
-    }
+@media only screen and (max-width: 768px) {
+  .profile_container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile_profileImg {
+    max-width: 180px;
+    /* Smaller for mobile */
+  }
+
+  .profile_profileImg::before,
+  .profile_profileImg::after {
+    transform-origin: 90px 0 !important;
+    /* Adjust orbit radius */
+  }
+}
