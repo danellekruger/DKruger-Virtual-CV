@@ -89,6 +89,26 @@
       50% { transform: scale(1.05); }
     }
 
+    /* Cool glow animation for profile image */
+    @keyframes profileGlow {
+      0% {
+        box-shadow: 0 10px 30px rgba(52, 105, 154, 0.3);
+      }
+      100% {
+        box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5), 0 0 20px rgba(0, 212, 255, 0.2);
+      }
+    }
+
+    /* Rotating border animation for profile image */
+    @keyframes rotateBorder {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
     /* common styles */
     img {
       width: 100%;
@@ -134,7 +154,7 @@
 
     .item_preTitle {
       font-size: 1.4rem;
-      color: var(--text-color);
+      color: white;
       font-weight: 300;
     }
 
@@ -233,16 +253,63 @@
     .profile_profileImg {
       max-width: 250px;
       position: relative;
+      margin: 0 auto;
     }
 
     .profile_profileImg img {
-      border-radius: 20px;
-      transition: transform 0.3s ease;
+      border-radius: 50%; /* Makes it a perfect circle */
+      transition: all 0.4s ease;
       box-shadow: 0 10px 30px rgba(52, 105, 154, 0.3);
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1; /* Ensures it stays circular even if image isn't square */
+      object-fit: cover; /* Crops image to fit circle without distortion */
+      border: 3px solid transparent;
+      background: linear-gradient(45deg, var(--primary-color), var(--accent-color)) border-box;
+      animation: profileGlow 3s ease-in-out infinite alternate;
+    }
+
+    /* Orbiting elements */
+    .profile_profileImg::before {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      animation: orbit 4s linear infinite;
+      transform-origin: 140px 0;
+      box-shadow: 0 0 10px var(--accent-color);
+      z-index: 10;
+    }
+
+    .profile_profileImg::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      animation: orbit 6s linear infinite reverse;
+      transform-origin: 120px 0;
+      box-shadow: 0 0 8px var(--primary-color);
+      z-index: 10;
     }
 
     .profile_profileImg:hover img {
-      transform: scale(1.05);
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+      filter: brightness(1.1);
+    }
+
+    /* Orbit animation keyframe */
+    @keyframes orbit {
+      0% { transform: rotate(0deg) translateX(140px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(140px) rotate(-360deg); }
     }
 
     .profile_name_firstName {
@@ -362,6 +429,12 @@
     }
 
     /* Enhanced Interests */
+    .interests-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
     .interest_items {
       margin-top: 2rem;
       display: flex;
