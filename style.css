@@ -569,13 +569,20 @@
   }
 
   .profile_profileImg {
-    max-width: 180px;
-    /* Smaller for mobile */
+    max-width: 250px;
   }
 
-  .profile_profileImg::before,
+  .profile_profileImg::before {
+    transform-origin: 125px 0 !important; /* Adjusted for new image size */
+  }
+
   .profile_profileImg::after {
-    transform-origin: 90px 0 !important;
-    /* Adjust orbit radius */
+    transform-origin: 105px 0 !important;
+  }
+
+  .profile_name_firstName,
+  .profile_name_lastName,
+  .profile_title {
+    word-break: break-word;
   }
 }
