@@ -9,6 +9,61 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initializeApp() {
+    // Add this code INSIDE the initializeApp() function, at the beginning:
+
+  // Theme switching functionality
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = themeToggle.querySelector('.theme-icon');
+  const body = document.body;
+  const container = document.getElementById('mainContainer');
+  
+  // Check for saved theme or system preference
+  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+  const savedTheme = localStorage.getItem('theme');
+  
+  function setTheme(theme) {
+    if (theme === 'dark') {
+      body.setAttribute('data-theme', 'dark');
+      container.setAttribute('data-theme', 'dark');
+      feather.replace({ 'data-feather': 'moon' });
+      themeIcon.setAttribute('data-feather', 'sun');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      body.setAttribute('data-theme', 'light');
+      container.setAttribute('data-theme', 'light');
+      feather.replace({ 'data-feather': 'sun' });
+      themeIcon.setAttribute('data-feather', 'moon');
+      localStorage.setItem('theme', 'light');
+    }
+    feather.replace();
+  }
+  
+  // Initialize theme
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else if (prefersDarkScheme.matches) {
+    setTheme('dark');
+  } else {
+    setTheme('light');
+  }
+  
+  // Toggle theme on button click
+  themeToggle.addEventListener('click', function() {
+    const currentTheme = body.getAttribute('data-theme');
+    if (currentTheme === 'light') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  });
+  
+  // Listen for system theme changes
+  prefersDarkScheme.addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+      setTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+
   // Loading screen
   const loading = document.getElementById('loading');
   if (loading) {
