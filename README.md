@@ -1,8 +1,8 @@
 # 💼 Virtual CV Website
 
-This is my **personal portfolio (virtual CV) website** built using **HTML** and **CSS**, and hosted with **GitHub Pages**. It showcases my background, skills, experience, and interests as a Software Development student.
+This is my **personal portfolio (virtual CV) website** built using **HTML**, **CSS**, and JavaScript. This virtual CV/Portfolio is hosted using **GitHub Pages**. It showcases my background, skills, experience, and interests as a Software Developer.
 
-## 🔗 Live Demo
+## 🔗 Here is my website
 
 🌐 [View My Virtual CV](https://danellekruger.github.io/DKruger-Virtual-CV/)  
 
@@ -24,6 +24,7 @@ This is my **personal portfolio (virtual CV) website** built using **HTML** and 
 
 - HTML
 - CSS
+- JavaScript
 - [Visual Studio Code](https://code.visualstudio.com/) – Code editor
 - [GitHub Pages](https://pages.github.com/) – For hosting the website
 
