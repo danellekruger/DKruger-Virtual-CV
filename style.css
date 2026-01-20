@@ -385,7 +385,7 @@
       height: 100%;
       background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
       border-radius: 3px;
-      transition: width 2s ease;
+      width: 0; /* Start at 0, will be animated by JS */
     }
 
     /* Interactive cards */
@@ -397,10 +397,12 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .card:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     /* Ref items as cards */
@@ -561,6 +563,30 @@
   transition: width 0.1s ease;
 }
 
+/* Ripple animation */
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Add will-change for better performance */
+.card {
+  will-change: transform;
+  transition: transform 0.3s ease;
+}
+
+/* Loading screen transition */
+.loading {
+  transition: opacity 0.5s ease;
+}
+
+/* Skill bar animation */
+.skill_progress {
+  transition: width 1s ease-in-out;
+}
+
 @media only screen and (max-width: 768px) {
   .profile_container {
     flex-direction: column;
@@ -584,5 +610,11 @@
   .profile_name_lastName,
   .profile_title {
     word-break: break-word;
+  }
+
+  /* Stack the group-3 contact and social sections on mobile */
+  .group-3 {
+    flex-direction: column;
+    gap: 3rem;
   }
 }

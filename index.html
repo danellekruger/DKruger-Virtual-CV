@@ -5,8 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Danelle Kruger - Software Developer Student Virtual CV">
+  <meta name="keywords" content="software developer, web developer, CV, portfolio, student">
+  <meta name="author" content="Danelle Kruger">
   <title>Danelle Kruger Virtual CV</title>
-  <script src="https://unpkg.com/feather-icons"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -28,7 +30,7 @@
     <div class="profile">
       <div class="profile_container">
         <div class="profile_profileImg">
-          <img src="./images/Virtual-CV-Image.png" alt="danelle kruger">
+          <img src="./images/Virtual-CV-Image.png" alt="Danelle Kruger portfolio photo">
         </div>
         <div>
           <h1 class="profile_name">
@@ -42,55 +44,59 @@
             new ideas and projects. I can adapt to change quickly, collaborate effectively, and achieve outcomes in
             many different environments.
           </p>
-          <a class="downloadBtn" href="./Danelle_Kruger_CV_Resume.pdf" download="Danelle-Kruger-CV.pdf">Download My CV</a>
+          <a class="downloadBtn" href="./Danelle_Kruger_CV_Resume.pdf" 
+            download="Danelle-Kruger-CV.pdf"
+            aria-label="Download Danelle Kruger's CV">
+            Download My CV
+          </a>
         </div>
       </div>
     </div>
 
-    <div class="group-1">
+    <section class="group-1">
       <div class="skills">
         <h3 class="title">Programming Languages</h3>
         <ul class="skills_list description">
           <li class="skill_item">
             <span>JavaScript</span>
             <div class="skill_bar">
-              <div class="skill_progress" style="width: 80%"></div>
+              <div class="skill_progress" data-width="80%"></div>
             </div>
           </li>
           <li class="skill_item">
             <span>TypeScript</span>
             <div class="skill_bar">
-              <div class="skill_progress" style="width: 65%"></div>
+              <div class="skill_progress" data-width="65%"></div>
             </div>
           </li>
           <li class="skill_item">
             <span>HTML/CSS</span>
             <div class="skill_bar">
-              <div class="skill_progress" style="width: 90%"></div>
+              <div class="skill_progress" data-width="90%"></div>
             </div>
           </li>
           <li class="skill_item">
             <span>C#</span>
             <div class="skill_bar">
-              <div class="skill_progress" style="width: 80%"></div>
+              <div class="skill_progress" data-width="80%"></div>
             </div>
           </li>
           <li class="skill_item">
             <span>C++</span>
             <div class="skill_bar">
-              <div class="skill_progress" style="width: 70%"></div>
+              <div class="skill_progress" data-width="70%"></div>
             </div>
           </li>
           <li class="skill_item">
             <span>Python</span>
             <div class="skill_bar">
-              <div class="skill_progress" style="width: 80%"></div>
+              <div class="skill_progress" data-width="80%"></div>
             </div>
           </li>
           <li class="skill_item">
             <span>Java</span>
             <div class="skill_bar">
-              <div class="skill_progress" style="width: 65%"></div>
+              <div class="skill_progress" data-width="65%"></div>
             </div>
           </li>
         </ul>
@@ -145,9 +151,9 @@
         </div>
 
       </div>
-    </div>
+    </section>
 
-    <div class="group-2">
+    <section class="group-2">
       <div class="exp">
         <h3 class="title">Experience</h3>
         <div class="exp_item card">
@@ -212,7 +218,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <hr>
 
 <!-- Recent Projects Section -->
@@ -264,7 +270,7 @@
   </div>
 </div>
 
-    <div class="group-3">
+    <section class="group-3">
       <div class="contact">
         <h3 class="title">Contact Information</h3>
         <div class="contact_info">
@@ -277,144 +283,23 @@
       <div class="social">
         <h3 class="title">Socials</h3>
         <div class="social_items">
-          <a href="https://github.com/danellekruger" target="_blank" class="social_item">
+          <a href="https://github.com/danellekruger" target="_blank" class="social_item" aria-label="GitHub profile">
             <i data-feather="github"></i>
             <span>/danellekruger</span>
           </a>
-          <a href="https://www.instagram.com/_danelle.kruger_/" target="_blank" class="social_item">
+         <a href="https://www.instagram.com/_danelle.kruger_/" target="_blank" class="social_item" aria-label="Instagram profile">
             <i data-feather="instagram"></i>
             <span>/_danelle.kruger_</span>
           </a>
-          <a href="https://www.linkedin.com/in/danelle-kruger-0462a335a/" target="_blank" class="social_item">
+          <a href="https://www.linkedin.com/in/danelle-kruger-0462a335a/" target="_blank" class="social_item" aria-label="LinkedIn profile">
             <i data-feather="linkedin"></i>
             <span>/Danelle Kruger</span>
           </a>
         </div>
       </div>
-    </div>
+    </section>
   </div>
-
-  <script>
-    // Initialize Feather icons
-    feather.replace();
-
-    // Loading screen
-    window.addEventListener('load', function () {
-      setTimeout(() => {
-        document.getElementById('loading').style.opacity = '0';
-        setTimeout(() => {
-          document.getElementById('loading').style.display = 'none';
-        }, 500);
-      }, 1000);
-    });
-
-    // Scroll progress indicator
-    window.addEventListener('scroll', function () {
-      const scrollProgress = document.getElementById('scrollProgress');
-      const scrollTop = window.pageYOffset;
-      const docHeight = document.body.offsetHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
-      scrollProgress.style.width = scrollPercent + '%';
-    });
-
-    // Create animated background particles
-    function createParticles() {
-      const particlesContainer = document.getElementById('particles');
-      const particleCount = 50;
-
-      for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-
-        const size = Math.random() * 4 + 1;
-        particle.style.width = size + 'px';
-        particle.style.height = size + 'px';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 6 + 's';
-        particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
-
-        particlesContainer.appendChild(particle);
-      }
-    }
-
-    // Animate skill bars on scroll
-    function animateSkillBars() {
-      const skillBars = document.querySelectorAll('.skill_progress');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const width = entry.target.style.width;
-            entry.target.style.width = '0%';
-            setTimeout(() => {
-              entry.target.style.width = width;
-            }, 200);
-          }
-        });
-      });
-
-      skillBars.forEach(bar => observer.observe(bar));
-    }
-
-    // Add typing effect to title
-    function typeWriter(element, text, speed = 100) {
-      let i = 0;
-      element.innerHTML = '';
-      function type() {
-        if (i < text.length) {
-          element.innerHTML += text.charAt(i);
-          i++;
-          setTimeout(type, speed);
-        }
-      }
-      type();
-    }
-
-    // Initialize animations
-    document.addEventListener('DOMContentLoaded', function () {
-      createParticles();
-      animateSkillBars();
-
-      // Add smooth hover effects to cards
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card => {
-        card.addEventListener('mouseenter', function () {
-          this.style.transform = 'translateY(-8px) scale(1.02)';
-        });
-        card.addEventListener('mouseleave', function () {
-          this.style.transform = 'translateY(0) scale(1)';
-        });
-      });
-    });
-
-    // Add click effect to download button
-    document.querySelector('.downloadBtn').addEventListener('click', function (e) {
-      const button = e.target;
-      const ripple = document.createElement('span');
-      ripple.style.position = 'absolute';
-      ripple.style.borderRadius = '50%';
-      ripple.style.background = 'rgba(255,255,255,0.3)';
-      ripple.style.transform = 'scale(0)';
-      ripple.style.animation = 'ripple 0.6s linear';
-      ripple.style.left = (e.clientX - button.offsetLeft) + 'px';
-      ripple.style.top = (e.clientY - button.offsetTop) + 'px';
-
-      button.appendChild(ripple);
-      setTimeout(() => ripple.remove(), 600);
-    });
-
-    // Add ripple animation CSS
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes ripple {
-        to {
-          transform: scale(4);
-          opacity: 0;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.js"></script>
+  <script src="script.js" defer></script>
 </body>
-
 </html>
