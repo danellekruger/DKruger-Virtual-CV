@@ -18,299 +18,188 @@
     <i data-feather="moon" class="theme-icon"></i>
   </button>
 
-  <!-- Loading Screen -->
-  <div class="loading" id="loading">
-    <div class="loader"></div>
-  </div>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-brand">DK DEV</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <i data-feather="menu"></i>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact Me</a></li>
+    </ul>
+  </nav>
 
-  <!-- Scroll Progress Indicator -->
-  <div class="scroll-indicator">
-    <div class="scroll-progress" id="scrollProgress"></div>
-  </div>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Hi, I'm <span class="neon-text">Danelle Kruger</span>
+          <br>
+          <span class="hero-subtitle">Full-Stack Web Developer</span>
+        </h1>
+        <p class="hero-description">
+          I create immersive digital experiences with cutting-edge web technologies. 
+          My passion is turning ideas into interactive realities that captivate users.
+        </p>
+        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+      </div>
+    </div>
+  </section>
 
-  <!-- Animated Background -->
-  <div class="particles" id="particles"></div>
-
-  <div class="container" id="mainContainer">
-    <div class="profile">
-      <div class="profile_container">
-        <div class="profile_profileImg">
-          <img src="./images/Virtual-CV-Image.png" alt="Danelle Kruger portfolio photo">
-        </div>
-        <div>
-          <h1 class="profile_name">
-            <span class="profile_name_firstName">Danelle</span>
-            <span class="profile_name_lastName">Kruger</span>
-          </h1>
-          <p class="profile_title">Software Developer Student</p>
-          <p class="description profile_description">
-            I am a Final-year Software Development student at the North-West University with a strong foundation of
-            software development and web development. I am eager to use my technological knowledge to contribute to
-            new ideas and projects. I can adapt to change quickly, collaborate effectively, and achieve outcomes in
-            many different environments.
-          </p>
-          <a class="downloadBtn" href="./Danelle_Kruger_CV_Resume.pdf" download="Danelle-Kruger-CV.pdf"
-            aria-label="Download Danelle Kruger's CV">
-            Download My CV
-          </a>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <p>
+          I built my first website at 15, and I've been hooked ever since.
+        </p>
+        <p>
+          I specialize in modern JavaScript frameworks and have a keen eye for design.  
+          My approach combines technical expertise with creative problem-solving to deliver exceptional user experiences.
+        </p>
+        <p>
+          When I'm not coding, you can find me contributing to open-source projects, 
+          attending tech meetups, or exploring the latest in VR development.
+        </p>
+        
+        <div class="skills-progress">
+          <h3 class="skills-title">My Skills</h3>
+          <div class="progress-item">
+            <div class="progress-label">
+              <span>React</span>
+              <span>90%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-width="90"></div>
+            </div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-label">
+              <span>Node.js</span>
+              <span>85%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-width="85"></div>
+            </div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-label">
+              <span>UI/UX Design</span>
+              <span>80%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-width="80"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <section class="group-1">
-      <div class="skills">
-        <h3 class="title">Programming Languages</h3>
-        <ul class="skills_list description">
-          <li class="skill_item">
-            <span>JavaScript</span>
-            <div class="skill_bar">
-              <div class="skill_progress" data-width="80%"></div>
-            </div>
-          </li>
-          <li class="skill_item">
-            <span>TypeScript</span>
-            <div class="skill_bar">
-              <div class="skill_progress" data-width="65%"></div>
-            </div>
-          </li>
-          <li class="skill_item">
-            <span>HTML/CSS</span>
-            <div class="skill_bar">
-              <div class="skill_progress" data-width="90%"></div>
-            </div>
-          </li>
-          <li class="skill_item">
-            <span>C#</span>
-            <div class="skill_bar">
-              <div class="skill_progress" data-width="80%"></div>
-            </div>
-          </li>
-          <li class="skill_item">
-            <span>C++</span>
-            <div class="skill_bar">
-              <div class="skill_progress" data-width="70%"></div>
-            </div>
-          </li>
-          <li class="skill_item">
-            <span>Python</span>
-            <div class="skill_bar">
-              <div class="skill_progress" data-width="80%"></div>
-            </div>
-          </li>
-          <li class="skill_item">
-            <span>Java</span>
-            <div class="skill_bar">
-              <div class="skill_progress" data-width="65%"></div>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="ref">
-        <h3 class="title">References</h3>
-        <div class="ref_item card">
-          <h4 class="ref_name">Jaap Coetzer</h4>
-          <p class="description">Co-Founder of DankoSpark</p>
-        </div>
-        <div class="ref_item card">
-          <h4 class="ref_name">Jaco Roux</h4>
-          <p class="description">Lead Developer at Senwes</p>
-        </div>
-        <div class="ref_item card">
-          <h4 class="ref_name">Stephan Burger</h4>
-          <p class="description">Group Executive: Information Technology at Senwes</p>
-        </div>
-        <div class="ref_item card">
-          <h4 class="ref_name">Michael Lambert</h4>
-          <p class="description">Owner of Elite Laser Tag Klerksdorp</p>
-        </div>
-      </div>
-
-      <div class="edu">
-        <h3 class="title">Education</h3>
-        <div class="edu_item card">
-          <p class="item_preTitle">2018-2022</p>
-          <h4 class="item_title">Matric Certificate Completed</h4>
-          <p class="item_subtitle">Schoonspruit High School</p>
-        </div>
-        <div class="edu_item card">
-          <p class="item_preTitle">2023-2025</p>
-          <h4 class="item_title">BSC in Information Technology</h4>
-          <p class="item_subtitle">North West University</p>
-        </div>
-      </div>
-
-      <div class="certification">
-        <h3 class="title">Certification</h3>
-        <div class="certification_item card">
-          <p class="item_preTitle">2024</p>
-          <h4 class="item_title">Advanced Cybersecurity and Ethical Hacking with ChatGPT</h4>
-          <p class="description">
-            Completed a Udemy course in mastering Cybersecurity with ChatGPT Ethical Hacking & AI-Powered Threat
-            Analysis –
-            Explored Networking, Cloud, & Compliance.
-          </p>
-          <a class="downloadBtn" href="./certificate/DKruger-UdemyCertificate.pdf" target="_blank">View
-            Certificate</a>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="group-2">
-      <div class="exp">
-        <h3 class="title">Experience</h3>
-        <div class="exp_item card">
-          <p class="item_preTitle">2024 (Holiday Job)</p>
-          <h4 class="item_title">DankoSpark</h4>
-          <p class="item_subtitle">"Shadow" Job for project</p>
-          <p class="description">
-            Did "Shadow" work for a project that I had to complete. I had to get more insight
-            on Project Management and business analytics.
-          </p>
-        </div>
-        <div class="exp_item card">
-          <p class="item_preTitle">2024 (Holiday Job)</p>
-          <h4 class="item_title">Elite Laser Tag Klerksdorp</h4>
-          <p class="item_subtitle">Assistant during busy holiday season</p>
-          <p class="description">
-            I provided customer service by aiding clients with game rules, equipment, and enquiries, I also obtained
-            some
-            bartending experience. I did my best to provide a safe and enjoyable experience for all clients. I managed
-            bookings
-            and reservations for clients who called in. I sometimes handled monetary transactions and kept proper
-            records.
-          </p>
-        </div>
-        <div class="exp_item card">
-          <p class="item_preTitle">2025 (Holiday Job)</p>
-          <h4 class="item_title">Senwes Head Office Klerksdorp</h4>
-          <p class="item_subtitle">Software Development</p>
-          <p class="description">
-            I worked with the Software Developers in IT services and provided assistance on a project.
-            Myself and another student had to create a Web Application to help encrypt PDF files to make them password
-            protected.
-            We completed this project and the rest of the development team deployed the Web App into their "My Intranet"
-            Website
-            for employees to use.
-          </p>
-        </div>
-      </div>
-
-      <div class="interest">
-        <h3 class="title">Interests and Hobbies</h3>
-        <div class="interest_items">
-          <div class="interest_item">
-            <i data-feather="music" width="20" height="20"></i>
-            <span>Music</span>
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title">My Projects</h2>
+      <div class="projects-grid">
+        
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-title">Neon Dashboard</h3>
+            <p class="project-subtitle">
+              A modern admin dashboard with real-time analytics and customizable widgets built with React and D3.js.
+            </p>
           </div>
-          <div class="interest_item">
-            <i data-feather="book" width="20" height="20"></i>
-            <span>Books</span>
+          <div class="project-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">D3.js</span>
+            <span class="tech-tag">Firebase</span>
           </div>
-          <div class="interest_item">
-            <i data-feather="map" width="20" height="20"></i>
-            <span>Travel</span>
-          </div>
-          <div class="interest_item">
-            <i data-feather="code" width="20" height="20"></i>
-            <span>Projects</span>
-          </div>
-          <div class="interest_item">
-            <i data-feather="layout" width="20" height="20"></i>
-            <span>Designing</span>
+          <div class="project-links">
+            <a href="#" class="btn btn-secondary">Live Demo</a>
+            <a href="#" class="btn btn-outline">Code</a>
           </div>
         </div>
-      </div>
-    </section>
-    <hr>
 
-    <!-- Recent Projects Section -->
-    <div class="projects">
-      <h3 class="title">Recent Projects</h3>
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-title">VR Portfolio</h3>
+            <p class="project-subtitle">
+              An immersive virtual reality portfolio experience built with Three.js and WebXR.
+            </p>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Three.js</span>
+            <span class="tech-tag">WebXR</span>
+            <span class="tech-tag">GSAP</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-secondary">Live Demo</a>
+            <a href="#" class="btn btn-outline">Code</a>
+          </div>
+        </div>
 
-      <div class="exp_item card">
-        <p class="item_preTitle">2025</p>
-        <h4 class="item_title">PDF Encryption Web App</h4>
-        <p class="item_subtitle">Senwes Head Office - Project</p>
-        <p class="description">
-          A Web App that can be used to upload PDF files, generate a password to protect these files, and then encrypt
-          the PDF
-          files to make them password protected. The user then has the choice to download each file individually or all
-          of them
-          as a ZIP file. This project was developed to run on Senwes' Intranet </p>
-        <p class="description">Languages: HTML, CSS, and Typescript.</p>
-        <p class="description">Frameworks/Libraries: Angular, and Syncfusion.</p>
-      </div>
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-title">CodeCollab</h3>
+            <p class="project-subtitle">
+              A real-time collaborative code editor with video chat functionality using WebSockets and WebRTC.
+            </p>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Socket.io</span>
+            <span class="tech-tag">WebRTC</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-secondary">Live Demo</a>
+            <a href="#" class="btn btn-outline">Code</a>
+          </div>
+        </div>
 
-      <div class="exp_item card">
-        <p class="item_preTitle">2025</p>
-        <h4 class="item_title">Personal Portfolio Website (Virtual CV)</h4>
-        <p class="item_subtitle">Personal Project</p>
-        <p class="description">
-          I built a personal portfolio website to showcase my skills, projects and personal details.
-          I also did this project to improve my Angular coding skills and to get more experience coding Web
-          Applications.</p>
-        <p class="description">Languages: HTML and CSS.</p>
-        <p class="description">Frameworks/Libraries: VSCode and GitHub.</p>
-      </div>
-
-      <div class="exp_item card">
-        <p class="item_preTitle">2025</p>
-        <h4 class="item_title">SwiftSend Messaging Application</h4>
-        <p class="item_subtitle">University Group Project</p>
-        <p class="description">
-          An app that allows you to login or sign up to the app, then once signed in you can add other users to your
-          platform that have also
-          created a profile, then start a chat wit any of them. The app also allows you to create/delete groups and add
-          and remove users. </p>
-        <p class="description">Languages: XAML and C#.</p>
-        <p class="description">Frameworks/Libraries: Supabase.</p>
-      </div>
-
-      <div class="exp_item card">
-        <p class="item_preTitle">2025</p>
-        <h4 class="item_title">Star Wars API wrapper</h4>
-        <p class="item_subtitle">Interview Project</p>
-        <p class="description">
-          I created a simple API wrapper for the Star Wars API (SWAPI). This wrapper provides a RESTful interface for
-          clients to interact with and simplifies some of the SWAPI functionalities. </p>
-        <p class="description">Languages: TypeScript, HTML, SCSS, Python.</p>
-        <p class="description">Frameworks/Libraries: FastAPI, VSCode, Docker.</p>
       </div>
     </div>
+  </section>
 
-    <section class="group-3">
-      <div class="contact">
-        <h3 class="title">Contact Information</h3>
-        <div class="contact_info">
-          <p class="description">📍 Klerksdorp, South Africa</p>
-          <p class="description">📱 076 279 2508</p>
-          <p class="description">✉️ kruger.danelle2829@gmail.com</p>
-        </div>
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-wrapper">
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Subject" required>
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
       </div>
+    </div>
+  </section>
 
-      <div class="social">
-        <h3 class="title">Socials</h3>
-        <div class="social_items">
-          <a href="https://github.com/danellekruger" target="_blank" class="social_item" aria-label="GitHub profile">
-            <i data-feather="github"></i>
-            <span>/danellekruger</span>
-          </a>
-          <a href="https://www.instagram.com/_danelle.kruger_/" target="_blank" class="social_item"
-            aria-label="Instagram profile">
-            <i data-feather="instagram"></i>
-            <span>/_danelle.kruger_</span>
-          </a>
-          <a href="https://www.linkedin.com/in/danelle-kruger-0462a335a/" target="_blank" class="social_item"
-            aria-label="LinkedIn profile">
-            <i data-feather="linkedin"></i>
-            <span>/Danelle Kruger</span>
-          </a>
-        </div>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 NEONDEV. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" aria-label="GitHub"><i data-feather="github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+        <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
       </div>
-    </section>
-  </div>
+    </div>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.js"></script>
   <script src="script.js" defer></script>
 </body>
