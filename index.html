@@ -13,6 +13,8 @@
 </head>
 
 <body>
+  <!-- Particle Background -->
+  <canvas id="particleCanvas"></canvas>
   <!-- Theme Toggle Button -->
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
     <i data-feather="moon" class="theme-icon"></i>
@@ -198,16 +200,59 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <div class="container">
-      <h2 class="section-title">My Projects</h2>
-      <div class="projects-grid">
-
-        <div class="project-card">
+<section id="projects" class="projects">
+  <div class="container">
+    <h2 class="section-title">Featured Work</h2>
+    
+    <!-- Project Stats -->
+    <div class="project-stats">
+      <div class="stat-card">
+        <div class="stat-icon">🚀</div>
+        <div class="stat-content">
+          <h3 class="stat-number">50+</h3>
+          <p class="stat-text">Projects Completed</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⭐</div>
+        <div class="stat-content">
+          <h3 class="stat-number">100%</h3>
+          <p class="stat-text">Client Satisfaction</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⚡</div>
+        <div class="stat-content">
+          <h3 class="stat-number">3+</h3>
+          <p class="stat-text">Years Experience</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Project Filter -->
+    <div class="project-filter">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="web">Web Apps</button>
+      <button class="filter-btn" data-filter="design">UI/UX Design</button>
+      <button class="filter-btn" data-filter="mobile">Mobile</button>
+      <button class="filter-btn" data-filter="vr">VR/AR</button>
+    </div>
+    
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card" data-category="web vr">
+        <div class="project-image">
+          <div class="image-overlay">
+            <span class="project-category">Web App • VR</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Neon Dashboard">
+        </div>
+        <div class="project-content">
           <div class="project-header">
             <h3 class="project-title">Neon Dashboard</h3>
             <p class="project-subtitle">
-              A modern admin dashboard with real-time analytics and customizable widgets built with React and D3.js.
+              A modern admin dashboard with real-time analytics and customizable widgets.
             </p>
           </div>
           <div class="project-tech">
@@ -217,15 +262,24 @@
           </div>
           <div class="project-links">
             <a href="#" class="btn btn-secondary">Live Demo</a>
-            <a href="#" class="btn btn-outline">Code</a>
+            <a href="#" class="btn btn-outline">View Code</a>
           </div>
         </div>
+      </div>
 
-        <div class="project-card">
+      <!-- Project 2 -->
+      <div class="project-card" data-category="vr design">
+        <div class="project-image">
+          <div class="image-overlay">
+            <span class="project-category">VR • UI/UX</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="VR Portfolio">
+        </div>
+        <div class="project-content">
           <div class="project-header">
             <h3 class="project-title">VR Portfolio</h3>
             <p class="project-subtitle">
-              An immersive virtual reality portfolio experience built with Three.js and WebXR.
+              An immersive virtual reality portfolio experience built with Three.js.
             </p>
           </div>
           <div class="project-tech">
@@ -235,15 +289,24 @@
           </div>
           <div class="project-links">
             <a href="#" class="btn btn-secondary">Live Demo</a>
-            <a href="#" class="btn btn-outline">Code</a>
+            <a href="#" class="btn btn-outline">View Code</a>
           </div>
         </div>
+      </div>
 
-        <div class="project-card">
+      <!-- Project 3 -->
+      <div class="project-card" data-category="web mobile">
+        <div class="project-image">
+          <div class="image-overlay">
+            <span class="project-category">Web App • Mobile</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="CodeCollab">
+        </div>
+        <div class="project-content">
           <div class="project-header">
             <h3 class="project-title">CodeCollab</h3>
             <p class="project-subtitle">
-              A real-time collaborative code editor with video chat functionality using WebSockets and WebRTC.
+              A real-time collaborative code editor with video chat functionality.
             </p>
           </div>
           <div class="project-tech">
@@ -253,13 +316,172 @@
           </div>
           <div class="project-links">
             <a href="#" class="btn btn-secondary">Live Demo</a>
-            <a href="#" class="btn btn-outline">Code</a>
+            <a href="#" class="btn btn-outline">View Code</a>
           </div>
         </div>
+      </div>
 
+      <!-- Project 4 -->
+      <div class="project-card" data-category="design">
+        <div class="project-image">
+          <div class="image-overlay">
+            <span class="project-category">UI/UX Design</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="E-commerce Platform">
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <h3 class="project-title">E-commerce Platform</h3>
+            <p class="project-subtitle">
+              A complete e-commerce solution with modern UI/UX design and seamless checkout.
+            </p>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Figma</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Stripe</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-secondary">View Design</a>
+            <a href="#" class="btn btn-outline">Case Study</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project-card" data-category="mobile">
+        <div class="project-image">
+          <div class="image-overlay">
+            <span class="project-category">Mobile App</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Fitness Tracker">
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <h3 class="project-title">Fitness Tracker</h3>
+            <p class="project-subtitle">
+              A mobile app for tracking workouts, nutrition, and health metrics.
+            </p>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">React Native</span>
+            <span class="tech-tag">GraphQL</span>
+            <span class="tech-tag">Firebase</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-secondary">App Store</a>
+            <a href="#" class="btn btn-outline">View Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="project-card" data-category="web">
+        <div class="project-image">
+          <div class="image-overlay">
+            <span class="project-category">Web App</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="AI Analytics">
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <h3 class="project-title">AI Analytics Dashboard</h3>
+            <p class="project-subtitle">
+              AI-powered analytics platform with predictive insights and automated reporting.
+            </p>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">TensorFlow</span>
+            <span class="tech-tag">Vue.js</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-secondary">Live Demo</a>
+            <a href="#" class="btn btn-outline">View Code</a>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+    
+    <!-- View More Button -->
+    <div class="view-more">
+      <a href="#" class="btn btn-outline">View All Projects →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <h2 class="section-title">Client Testimonials</h2>
+    
+    <div class="testimonials-slider">
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card active">
+        <div class="testimonial-content">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-text">
+            Danelle transformed our outdated website into a modern, user-friendly platform. 
+            The attention to detail and technical expertise was exceptional. Our conversion 
+            rates increased by 40% after launch!
+          </p>
+        </div>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Alex Morgan" class="author-img">
+          <div class="author-info">
+            <h4 class="author-name">Alex Morgan</h4>
+            <p class="author-title">CEO, TechVision Inc.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-text">
+            Working with Danelle was a game-changer for our startup. She built a scalable 
+            backend system that handles thousands of requests daily. Her code is clean, 
+            documented, and she delivered ahead of schedule.
+          </p>
+        </div>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Sarah Chen" class="author-img">
+          <div class="author-info">
+            <h4 class="author-name">Sarah Chen</h4>
+            <p class="author-title">CTO, StartupLabs</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-text">
+            The VR portfolio Danelle created for our agency was breathtaking. It showcased 
+            our work in an innovative way that impressed all our clients. Her creative 
+            approach combined with technical skill is rare to find.
+          </p>
+        </div>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Michael Rodriguez" class="author-img">
+          <div class="author-info">
+            <h4 class="author-name">Michael Rodriguez</h4>
+            <p class="author-title">Creative Director, PixelForge</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Testimonial Navigation -->
+    <div class="testimonial-nav">
+      <button class="nav-dot active" data-slide="0"></button>
+      <button class="nav-dot" data-slide="1"></button>
+      <button class="nav-dot" data-slide="2"></button>
+    </div>
+  </div>
+</section>
 
   <!-- Contact Section -->
   <section id="contact" class="contact">

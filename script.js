@@ -1,3 +1,106 @@
+// Particle System
+class ParticleSystem {
+  constructor() {
+    this.canvas = document.getElementById('particleCanvas');
+    this.ctx = this.canvas.getContext('2d');
+    this.particles = [];
+    this.particleCount = window.innerWidth < 768 ? 30 : 60;
+    this.mouse = { x: 0, y: 0, radius: 100 };
+    
+    this.init();
+    this.animate();
+    this.setupEventListeners();
+  }
+
+  init() {
+    this.resize();
+    
+    // Create particles
+    for (let i = 0; i < this.particleCount; i++) {
+      this.particles.push({
+        x: Math.random() * this.canvas.width,
+        y: Math.random() * this.canvas.height,
+        size: Math.random() * 2 + 0.5,
+        speedX: Math.random() * 0.5 - 0.25,
+        speedY: Math.random() * 0.5 - 0.25,
+        color: `rgba(${Math.floor(Math.random() * 100 + 156)}, ${Math.floor(Math.random() * 100 + 156)}, 255, ${Math.random() * 0.3 + 0.1})`
+      });
+    }
+  }
+
+  resize() {
+    this.canvas.width = window.innerWidth;
+    this.canvas.height = window.innerHeight;
+  }
+
+  animate() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    
+    // Update and draw particles
+    this.particles.forEach(particle => {
+      // Move particles
+      particle.x += particle.speedX;
+      particle.y += particle.speedY;
+      
+      // Bounce off walls
+      if (particle.x > this.canvas.width) particle.speedX = -Math.abs(particle.speedX);
+      if (particle.x < 0) particle.speedX = Math.abs(particle.speedX);
+      if (particle.y > this.canvas.height) particle.speedY = -Math.abs(particle.speedY);
+      if (particle.y < 0) particle.speedY = Math.abs(particle.speedY);
+      
+      // Draw particle
+      this.ctx.beginPath();
+      this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+      this.ctx.fillStyle = particle.color;
+      this.ctx.fill();
+      
+      // Draw connections
+      this.drawConnections(particle);
+    });
+    
+    requestAnimationFrame(() => this.animate());
+  }
+
+  drawConnections(particle) {
+    this.particles.forEach(otherParticle => {
+      const dx = particle.x - otherParticle.x;
+      const dy = particle.y - otherParticle.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      
+      if (distance < 100) {
+        this.ctx.beginPath();
+        this.ctx.strokeStyle = `rgba(102, 126, 234, ${0.1 * (1 - distance/100)})`;
+        this.ctx.lineWidth = 0.5;
+        this.ctx.moveTo(particle.x, particle.y);
+        this.ctx.lineTo(otherParticle.x, otherParticle.y);
+        this.ctx.stroke();
+      }
+    });
+  }
+
+  setupEventListeners() {
+    window.addEventListener('resize', () => this.resize());
+    
+    window.addEventListener('mousemove', (e) => {
+      this.mouse.x = e.x;
+      this.mouse.y = e.y;
+      
+      // Add mouse interaction
+      this.particles.forEach(particle => {
+        const dx = this.mouse.x - particle.x;
+        const dy = this.mouse.y - particle.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < this.mouse.radius) {
+          const force = (this.mouse.radius - distance) / this.mouse.radius;
+          particle.x -= dx * force * 0.05;
+          particle.y -= dy * force * 0.05;
+        }
+      });
+    });
+  }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize Feather icons if available
@@ -5,8 +108,70 @@ document.addEventListener("DOMContentLoaded", function () {
     feather.replace();
   }
 
+  // Initialize Particle System
+  new ParticleSystem();
+
   initializeApp();
 });
+
+// Project Filtering
+function setupProjectFilter() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      // Add active class to clicked button
+      button.classList.add('active');
+
+      const filterValue = button.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        if (filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
+          card.classList.remove('hidden');
+          setTimeout(() => {
+            card.style.display = 'block';
+          }, 300);
+        } else {
+          card.classList.add('hidden');
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  });
+}
+
+// Testimonial Slider
+function setupTestimonialSlider() {
+  const slides = document.querySelectorAll('.testimonial-card');
+  const dots = document.querySelectorAll('.nav-dot');
+  let currentSlide = 0;
+
+  function showSlide(n) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    currentSlide = (n + slides.length) % slides.length;
+
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      showSlide(index);
+    });
+  });
+
+  // Auto-rotate testimonials
+  setInterval(() => {
+    showSlide(currentSlide + 1);
+  }, 5000);
+}
 
 function initializeApp() {
   // Theme switching functionality
@@ -102,6 +267,10 @@ function initializeApp() {
 
   // Initialize animations
   animateHeroElements();
+
+  //testimonials
+  setupProjectFilter();
+  setupTestimonialSlider();
 
   // Mobile Navigation Toggle
   const navToggle = document.getElementById("navToggle");
