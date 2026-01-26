@@ -21,7 +21,7 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="navbar-container">
-      <div class="nav-brand">CDK DEV</div>
+      <div class="nav-brand">CDK Developments</div>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
         <i data-feather="menu"></i>
       </button>
@@ -35,39 +35,115 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="container">
-      <div class="hero-wrapper">
-        <div class="hero-content">
+<section id="home" class="hero">
+  <div class="container">
+    <!-- Animated Background Elements -->
+    <div class="bg-grid"></div>
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+    </div>
+    
+    <div class="hero-wrapper">
+      <div class="hero-content">
+        <!-- Animated Title -->
+        <div class="title-container">
           <h1 class="hero-title">
-            Hi, I'm <span class="neon-text">Danelle Kruger</span>
-            <br>
-            <span class="hero-subtitle">Full-Stack Web Developer</span>
+            <span class="title-line">
+              <span class="title-word">Hi, I'm</span>
+              <span class="title-word highlight-word">Danelle</span>
+            </span>
+            <span class="title-line">
+              <span class="title-word">Kruger</span>
+            </span>
           </h1>
-          <p class="hero-description">
-            I create immersive digital experiences with cutting-edge web technologies.
-            My passion is turning ideas into interactive realities that captivate users.
-          </p>
-          <a href="#contact" class="btn btn-primary">Get In Touch</a>
-        </div>
-
-        <!-- Add this profile image section -->
-        <div class="hero-image">
-          <div class="image-wrapper">
-            <img src="./images/Virtual-CV-Image.png" alt="Danelle Kruger - Full-Stack Web Developer">
-            <div class="image-border"></div>
-            <div class="image-glow"></div>
-            <div class="floating-elements">
-              <div class="floating-element element-1">🌐</div>
-              <div class="floating-element element-2">⚡</div>
-              <div class="floating-element element-3">💻</div>
-              <div class="floating-element element-4">✨</div>
+          
+          <div class="title-subtitle">
+            <div class="typewriter">
+              <span class="typewriter-text">Full-Stack Web Developer</span>
+              <span class="cursor">|</span>
             </div>
           </div>
         </div>
+        
+        <!-- Description with staggered animation -->
+        <div class="description-container">
+          <p class="hero-description">
+            <span class="desc-line">I create immersive digital experiences</span>
+            <span class="desc-line">with cutting-edge web technologies.</span>
+            <span class="desc-line">My passion is turning ideas into interactive</span>
+            <span class="desc-line">realities that captivate users.</span>
+          </p>
+        </div>
+        
+        <!-- Animated CTA Buttons -->
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary btn-glow">
+            <span class="btn-text">View My Work</span>
+            <span class="btn-icon">→</span>
+          </a>
+          <a href="#contact" class="btn btn-outline btn-sparkle">
+            <span class="btn-text">Get In Touch</span>
+          </a>
+        </div>
+        
+        <!-- Stats Bar -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number" data-count="50">0</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="3">0</div>
+            <div class="stat-label">Years Exp</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="100">0</div>
+            <div class="stat-label">% Passion</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Image with Glass Morphism Effect -->
+      <div class="hero-image">
+        <div class="image-container">
+          <div class="image-frame">
+            <div class="image-glass">
+              <img src="./images/Virtual-CV-Image.png" alt="Danelle Kruger - Full-Stack Web Developer" class="profile-img">
+            </div>
+            <!-- Tech Badges (replaces emojis) -->
+            <div class="tech-badges">
+              <div class="badge" data-tech="React">
+                <i data-feather="code" class="badge-icon"></i>
+              </div>
+              <div class="badge" data-tech="Node.js">
+                <i data-feather="server" class="badge-icon"></i>
+              </div>
+              <div class="badge" data-tech="UI/UX">
+                <i data-feather="layout" class="badge-icon"></i>
+              </div>
+              <div class="badge" data-tech="API">
+                <i data-feather="zap" class="badge-icon"></i>
+              </div>
+            </div>
+          </div>
+          <!-- Image Glow Effect -->
+          <div class="image-glow-effect"></div>
+        </div>
       </div>
     </div>
-  </section>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <div class="arrow"></div>
+    </div>
+  </div>
+</section>
 
   <!-- About Section -->
   <section id="about" class="about">

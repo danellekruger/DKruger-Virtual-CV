@@ -47,6 +47,62 @@ function initializeApp() {
     }
   });
 
+  // Animate hero elements
+  function animateHeroElements() {
+    // Animate counter numbers
+    const counters = document.querySelectorAll(".stat-number");
+    const speed = 200; // Lower is faster
+
+    counters.forEach((counter) => {
+      const target = +counter.getAttribute("data-count");
+      const count = +counter.innerText;
+      const increment = target / speed;
+
+      const updateCount = () => {
+        const current = +counter.innerText;
+
+        if (current < target) {
+          counter.innerText = Math.ceil(current + increment);
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      // Start counting when element is in view
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              updateCount();
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+
+      observer.observe(counter);
+    });
+
+    // Add hover effects to badges
+    const badges = document.querySelectorAll(".badge");
+    badges.forEach((badge) => {
+      badge.addEventListener("mouseenter", () => {
+        const icon = badge.querySelector(".badge-icon");
+        if (icon) {
+          icon.style.transform = "rotate(15deg)";
+          setTimeout(() => {
+            icon.style.transform = "rotate(0deg)";
+          }, 300);
+        }
+      });
+    });
+  }
+
+  // Initialize animations
+  animateHeroElements();
+
   // Mobile Navigation Toggle
   const navToggle = document.getElementById("navToggle");
   const navMenu = document.getElementById("navMenu");
