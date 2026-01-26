@@ -145,34 +145,6 @@ function setupProjectFilter() {
   });
 }
 
-// Testimonial Slider
-function setupTestimonialSlider() {
-  const slides = document.querySelectorAll('.testimonial-card');
-  const dots = document.querySelectorAll('.nav-dot');
-  let currentSlide = 0;
-
-  function showSlide(n) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
-
-    currentSlide = (n + slides.length) % slides.length;
-
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
-  }
-
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-      showSlide(index);
-    });
-  });
-
-  // Auto-rotate testimonials
-  setInterval(() => {
-    showSlide(currentSlide + 1);
-  }, 5000);
-}
-
 function initializeApp() {
   // REMOVED: Theme switching functionality
   
@@ -231,10 +203,6 @@ function initializeApp() {
 
   // Initialize animations
   animateHeroElements();
-
-  // Project filtering and testimonials
-  setupProjectFilter();
-  setupTestimonialSlider();
 
   // Mobile Navigation Toggle
   const navToggle = document.getElementById("navToggle");
