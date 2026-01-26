@@ -35,29 +35,6 @@
   --glass-border: rgba(255, 255, 255, 0.1);
 }
 
-[data-theme="light"] {
-  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --secondary-gradient: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
-  --accent-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  
-  --primary-color: #667eea;
-  --secondary-color: #66a6ff;
-  --accent-color: #f5576c;
-  --accent-secondary: #89f7fe;
-  
-  --dark-bg: #f8f9ff;
-  --dark-card: rgba(255, 255, 255, 0.9);
-  --dark-card-solid: #ffffff;
-  
-  --text-light: #333344;
-  --text-muted: #666688;
-  --text-dark: #222233;
-  
-  --shadow-neon: 0 5px 20px rgba(102, 126, 234, 0.15);
-  --glass-bg: rgba(255, 255, 255, 0.8);
-  --glass-border: rgba(102, 126, 234, 0.2);
-}
-
 /* Particle Canvas */
 #particleCanvas {
   position: fixed;
@@ -99,10 +76,6 @@ body {
   backdrop-filter: blur(10px);
   z-index: 1000;
   transition: var(--transition);
-}
-
-[data-theme="light"] .navbar {
-  background: rgba(248, 249, 250, 0.9);
 }
 
 .navbar .container {
@@ -175,11 +148,6 @@ body {
   transition: var(--transition);
   border-bottom: 1px solid rgba(0, 217, 255, 0.1);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-}
-
-[data-theme="light"] .navbar {
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid rgba(0, 119, 204, 0.1);
 }
 
 .navbar-container {
@@ -303,10 +271,6 @@ body {
 
   .nav-link:hover {
     background: rgba(0, 217, 255, 0.1);
-  }
-
-  [data-theme="light"] .nav-link {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
   body {
@@ -627,10 +591,6 @@ section {
   overflow: hidden;
 }
 
-[data-theme="light"] .progress-bar {
-  background: rgba(0, 0, 0, 0.1);
-}
-
 .progress-fill {
   height: 100%;
   background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
@@ -654,10 +614,6 @@ section {
   transition: var(--transition);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-[data-theme="light"] .project-card {
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .project-card:hover {
@@ -727,13 +683,6 @@ section {
   border-radius: 10px;
   color: var(--text-light);
   transition: var(--transition);
-}
-
-[data-theme="light"] .form-group input,
-[data-theme="light"] .form-group textarea {
-  background: white;
-  border-color: rgba(0, 0, 0, 0.1);
-  color: var(--text-dark);
 }
 
 .form-group input:focus,

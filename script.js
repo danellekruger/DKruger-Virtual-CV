@@ -174,44 +174,8 @@ function setupTestimonialSlider() {
 }
 
 function initializeApp() {
-  // Theme switching functionality
-  const themeToggle = document.getElementById("themeToggle");
-  const themeIcon = themeToggle.querySelector(".theme-icon");
-  const body = document.body;
-
-  // Check for saved theme
-  const savedTheme = localStorage.getItem("theme");
-
-  function setTheme(theme) {
-    if (theme === "dark") {
-      body.setAttribute("data-theme", "dark");
-      themeIcon.setAttribute("data-feather", "sun");
-      localStorage.setItem("theme", "dark");
-    } else {
-      body.setAttribute("data-theme", "light");
-      themeIcon.setAttribute("data-feather", "moon");
-      localStorage.setItem("theme", "light");
-    }
-    feather.replace();
-  }
-
-  // Initialize theme - Light as default
-  if (savedTheme) {
-    setTheme(savedTheme);
-  } else {
-    setTheme("light");
-  }
-
-  // Toggle theme on button click
-  themeToggle.addEventListener("click", function () {
-    const currentTheme = body.getAttribute("data-theme");
-    if (currentTheme === "light") {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  });
-
+  // REMOVED: Theme switching functionality
+  
   // Animate hero elements
   function animateHeroElements() {
     // Animate counter numbers
@@ -268,7 +232,7 @@ function initializeApp() {
   // Initialize animations
   animateHeroElements();
 
-  //testimonials
+  // Project filtering and testimonials
   setupProjectFilter();
   setupTestimonialSlider();
 
