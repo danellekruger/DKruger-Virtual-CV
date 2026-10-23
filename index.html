@@ -3,463 +3,734 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Danelle Kruger - Software Developer Student Virtual CV">
-  <meta name="keywords" content="software developer, web developer, CV, portfolio, student">
+  <title>Danelle Kruger · Full-Stack Developer &amp; Designer</title>
+  <meta name="description" content="Danelle Kruger is a full-stack developer (Angular, .NET, SQL Server) with a passion for UI/UX design. Case studies, design process and certificates.">
   <meta name="author" content="Danelle Kruger">
-  <title>Danelle Kruger Virtual CV</title>
+  <link rel="canonical" href="https://danellekruger.github.io/DKruger-Virtual-CV/">
+
+  <!-- Open Graph / LinkedIn -->
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Danelle Kruger">
+  <meta property="og:title" content="Danelle Kruger · Full-Stack Developer & Designer">
+  <meta property="og:description" content="Angular, .NET and SQL Server developer with a passion for design. See my case studies, design process and certificates.">
+  <meta property="og:url" content="https://danellekruger.github.io/DKruger-Virtual-CV/">
+  <meta property="og:image" content="https://danellekruger.github.io/DKruger-Virtual-CV/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Danelle Kruger, Full-Stack Developer and Designer">
+  <meta property="profile:first_name" content="Danelle">
+  <meta property="profile:last_name" content="Kruger">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Danelle Kruger · Full-Stack Developer & Designer">
+  <meta name="twitter:description" content="Angular, .NET and SQL Server developer with a passion for design.">
+  <meta name="twitter:image" content="https://danellekruger.github.io/DKruger-Virtual-CV/images/og-image.png">
+
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0a0a1a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f7fc" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Apply the saved (or system) theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var theme = null;
+      root.classList.add('js');
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      root.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <link rel="preload" as="font" href="fonts/inter-latin-var.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="images/profile.webp" type="image/webp">
   <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Danelle Kruger",
+      "jobTitle": "Full-Stack Developer",
+      "url": "https://danellekruger.github.io/DKruger-Virtual-CV/",
+      "image": "https://danellekruger.github.io/DKruger-Virtual-CV/images/og-image.png",
+      "knowsAbout": ["Angular", "TypeScript", ".NET", "C#", "SQL Server", "UI/UX Design"]
+    }
+  </script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <!-- Particle Background -->
-  <canvas id="particleCanvas"></canvas>
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
 
   <!-- Navigation -->
-  <nav class="navbar">
-    <div class="navbar-container">
-      <div class="nav-brand">CDK Developments</div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <i data-feather="menu"></i>
-      </button>
+  <header class="navbar">
+    <nav class="navbar-container" aria-label="Primary">
+      <a href="#home" class="nav-brand">CDK Developments</a>
+
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#home" class="nav-link active">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Work</a></li>
+        <li><a href="#process" class="nav-link">Process</a></li>
+        <li><a href="#certificates" class="nav-link">Certificates</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
-    </div>
-  </nav>
 
-  <!-- Hero Section -->
-<section id="home" class="hero">
-  <div class="container">
-    <!-- Animated Background Elements -->
-    <div class="bg-grid"></div>
-    <div class="floating-shapes">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-      <div class="shape shape-4"></div>
-    </div>
-    
-    <div class="hero-wrapper">
-      <div class="hero-content">
-        <!-- Animated Title -->
-        <div class="title-container">
-          <h1 class="hero-title">
-            <span class="title-line">
-              <span class="title-word">Hi, I'm</span>
-              <span class="title-word highlight-word">Danelle</span>
-            </span>
-            <span class="title-line">
-              <span class="title-word">Kruger</span>
-            </span>
-          </h1>
-          
-          <div class="title-subtitle">
-            <div class="typewriter">
-              <span class="typewriter-text">Full-Stack Web Developer</span>
-              <span class="cursor">|</span>
+      <div class="nav-actions">
+        <button type="button" class="palette-trigger" id="paletteTrigger" aria-haspopup="dialog">
+          <i data-feather="search" aria-hidden="true"></i>
+          <span class="sr-only">Open command palette</span>
+          <kbd class="palette-hint" data-shortcut-hint>Ctrl K</kbd>
+        </button>
+        <button type="button" class="icon-btn theme-toggle" id="themeToggle" aria-label="Switch to light theme">
+          <i data-feather="sun" class="icon-sun" aria-hidden="true"></i>
+          <i data-feather="moon" class="icon-moon" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="icon-btn nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+          <i data-feather="menu" class="icon-menu" aria-hidden="true"></i>
+          <i data-feather="x" class="icon-close" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero Section -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="bg-grid" aria-hidden="true"></div>
+      <div class="floating-shapes" aria-hidden="true">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-wrapper">
+          <div class="hero-content">
+            <div class="title-container">
+              <h1 class="hero-title" id="hero-title">
+                <span class="title-line">
+                  <span class="title-word">Hi, I'm</span>
+                  <span class="title-word highlight-word">Danelle</span>
+                </span>
+                <span class="title-line">
+                  <span class="title-word">Kruger</span>
+                </span>
+              </h1>
+
+              <p class="title-subtitle">
+                <span class="typewriter-text">Full-Stack Web Developer</span>
+              </p>
+            </div>
+
+            <p class="hero-description">
+              <span class="desc-line">I build full-stack web apps with Angular,</span>
+              <span class="desc-line">.NET and SQL Server, and I design them too.</span>
+              <span class="desc-line">My passion is turning ideas into interfaces</span>
+              <span class="desc-line">that feel as good as they work.</span>
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#projects" class="btn btn-primary btn-glow">
+                <span class="btn-text">View My Work</span>
+                <span class="btn-icon" aria-hidden="true">→</span>
+              </a>
+              <a href="Danelle_Kruger_CV_Resume.pdf" class="btn btn-outline" download>
+                <span class="btn-text">Download CV</span>
+              </a>
+            </div>
+
+            <dl class="hero-stats">
+              <div class="stat-item">
+                <dt class="stat-label">Year experience</dt>
+                <dd class="stat-number" data-count="1">1</dd>
+              </div>
+              <div class="stat-item">
+                <dt class="stat-label">Certificates</dt>
+                <dd class="stat-number" data-count-source="certificates">0</dd>
+              </div>
+              <div class="stat-item">
+                <dt class="stat-label">Case studies</dt>
+                <dd class="stat-number" data-count-source="case-studies">0</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero-image">
+            <div class="image-container">
+              <div class="image-frame">
+                <div class="image-glass">
+                  <img src="images/profile.webp" alt="Portrait of Danelle Kruger" class="profile-img" width="350" height="350" fetchpriority="high">
+                </div>
+                <ul class="tech-badges" aria-label="Core stack">
+                  <li class="badge" data-tech="Angular"><i data-feather="code" class="badge-icon" aria-hidden="true"></i><span class="sr-only">Angular</span></li>
+                  <li class="badge" data-tech=".NET"><i data-feather="server" class="badge-icon" aria-hidden="true"></i><span class="sr-only">.NET</span></li>
+                  <li class="badge" data-tech="SQL Server"><i data-feather="database" class="badge-icon" aria-hidden="true"></i><span class="sr-only">SQL Server</span></li>
+                  <li class="badge" data-tech="UI/UX"><i data-feather="pen-tool" class="badge-icon" aria-hidden="true"></i><span class="sr-only">UI/UX Design</span></li>
+                </ul>
+              </div>
+              <div class="image-glow-effect" aria-hidden="true"></div>
             </div>
           </div>
         </div>
-        
-        <!-- Description with staggered animation -->
-        <div class="description-container">
-          <p class="hero-description">
-            <span class="desc-line">I create immersive digital experiences</span>
-            <span class="desc-line">with cutting-edge technologies.</span>
-            <span class="desc-line">My passion is turning ideas into interactive</span>
-            <span class="desc-line">realities that captivate users.</span>
+      </div>
+
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to About">
+        <span class="mouse"><span class="wheel"></span></span>
+        <span class="arrow"></span>
+      </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about" aria-labelledby="about-title">
+      <div class="container">
+        <h2 class="section-title reveal" id="about-title">About Me</h2>
+        <div class="about-content reveal">
+          <p>
+            I started programming when I was 15 years old, and I've been hooked ever since.
+          </p>
+          <p>
+            I specialize in modern Angular frameworks and have a keen eye for design.
+            My approach combines technical expertise with creative problem-solving to deliver exceptional user
+            experiences.
+          </p>
+          <p>
+            When I'm not coding, you can find me contributing to open-source projects,
+            attending tech meetups, or exploring the latest in VR development.
           </p>
         </div>
-        
-        <!-- Animated CTA Buttons -->
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary btn-glow">
-            <span class="btn-text">View My Work</span>
-            <span class="btn-icon">→</span>
-          </a>
-          <a href="#contact" class="btn btn-outline btn-sparkle">
-            <span class="btn-text">Get In Touch</span>
-          </a>
-        </div>
-        
-        <!-- Stats Bar -->
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-number" data-count="18">0</div>
-            <div class="stat-label">Projects</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-count="2">0</div>
-            <div class="stat-label">Years Exp</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-count="100">0</div>
-            <div class="stat-label">% Passion</div>
-          </div>
+      </div>
+    </section>
+
+    <!-- Skills Section: grouped by area, linked to the work and certificates that back them up -->
+    <section id="skills" class="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 class="section-title reveal" id="skills-title">Skills</h2>
+        <p class="section-intro reveal">Grouped by area. Each skill links to the work or certificate behind it.</p>
+
+        <div class="skills-grid">
+          <article class="skill-group reveal">
+            <h3 class="skill-group-title"><i data-feather="layout" aria-hidden="true"></i> Frontend</h3>
+            <ul class="skill-list">
+              <li class="skill">
+                <span class="skill-name">Angular</span>
+                <span class="skill-links"><a href="#case-employee-management">Employee Management</a><a href="#case-landing-pages">Landing Pages</a></span>
+              </li>
+              <li class="skill">
+                <span class="skill-name">TypeScript</span>
+                <span class="skill-links"><a href="#case-employee-management">Employee Management</a><button type="button" class="cert-link" data-cert="typescript-crash-course">Certificate</button></span>
+              </li>
+              <li class="skill">
+                <span class="skill-name">JavaScript</span>
+                <span class="skill-links"><a href="#case-virtual-portfolio">Virtual Portfolio</a></span>
+              </li>
+              <li class="skill">
+                <span class="skill-name">HTML &amp; CSS</span>
+                <span class="skill-links"><a href="#case-virtual-portfolio">Virtual Portfolio</a><a href="#case-landing-pages">Landing Pages</a></span>
+              </li>
+              <li class="skill">
+                <span class="skill-name">Tailwind CSS</span>
+                <span class="skill-links"><button type="button" class="cert-link" data-cert="tailwind-v4">Certificate</button></span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skill-group reveal">
+            <h3 class="skill-group-title"><i data-feather="server" aria-hidden="true"></i> Backend</h3>
+            <ul class="skill-list">
+              <li class="skill">
+                <span class="skill-name">C#</span>
+                <span class="skill-links"><button type="button" class="cert-link" data-cert="csharp-basics">Certificate</button></span>
+              </li>
+              <li class="skill">
+                <span class="skill-name">.NET / ASP.NET</span>
+                <!-- Link a case study here once you add one, e.g. <a href="#case-...">Project</a> -->
+                <span class="skill-links"></span>
+              </li>
+              <li class="skill">
+                <span class="skill-name">REST APIs</span>
+                <span class="skill-links"></span>
+              </li>
+              <li class="skill">
+                <span class="skill-name">Node.js</span>
+                <span class="skill-links"></span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skill-group reveal">
+            <h3 class="skill-group-title"><i data-feather="database" aria-hidden="true"></i> Data</h3>
+            <ul class="skill-list">
+              <li class="skill">
+                <span class="skill-name">SQL Server</span>
+                <span class="skill-links"><button type="button" class="cert-link" data-cert="sql-bootcamp">Certificate</button></span>
+              </li>
+              <li class="skill">
+                <span class="skill-name">T-SQL &amp; query design</span>
+                <span class="skill-links"><button type="button" class="cert-link" data-cert="sql-bootcamp">Certificate</button></span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skill-group reveal">
+            <h3 class="skill-group-title"><i data-feather="pen-tool" aria-hidden="true"></i> Design</h3>
+            <ul class="skill-list">
+              <li class="skill">
+                <span class="skill-name">UI/UX design</span>
+                <span class="skill-links"><a href="#case-landing-pages">Landing Pages</a><a href="#case-virtual-portfolio">Virtual Portfolio</a></span>
+              </li>
+              <li class="skill">
+                <span class="skill-name">Wireframing &amp; prototyping</span>
+                <span class="skill-links"><a href="#process">Design process</a></span>
+              </li>
+              <li class="skill">
+                <span class="skill-name">Responsive &amp; accessible UI</span>
+                <span class="skill-links"><a href="#case-virtual-portfolio">Virtual Portfolio</a></span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="skill-group reveal">
+            <h3 class="skill-group-title"><i data-feather="tool" aria-hidden="true"></i> Practices</h3>
+            <ul class="skill-list">
+              <li class="skill">
+                <span class="skill-name">Clean code</span>
+                <span class="skill-links"><button type="button" class="cert-link" data-cert="clean-code">Certificate</button></span>
+              </li>
+              <li class="skill">
+                <span class="skill-name">Requirements gathering</span>
+                <span class="skill-links"><button type="button" class="cert-link" data-cert="requirements-gathering">Certificate</button></span>
+              </li>
+              <li class="skill">
+                <span class="skill-name">Prompt engineering</span>
+                <span class="skill-links"><button type="button" class="cert-link" data-cert="prompt-engineering">Certificate</button></span>
+              </li>
+              <li class="skill">
+                <span class="skill-name">Git &amp; GitHub</span>
+                <span class="skill-links"><a href="#case-virtual-portfolio">Virtual Portfolio</a></span>
+              </li>
+            </ul>
+          </article>
         </div>
       </div>
+    </section>
 
-      <!-- Profile Image with Glass Morphism Effect -->
-      <div class="hero-image">
-        <div class="image-container">
-          <div class="image-frame">
-            <div class="image-glass">
-              <img src="./images/Virtual-CV-Image.png" alt="Danelle Kruger - Full-Stack Web Developer" class="profile-img">
-            </div>
-            <!-- Tech Badges (replaces emojis) -->
-            <div class="tech-badges">
-              <div class="badge" data-tech="React">
-                <i data-feather="code" class="badge-icon"></i>
+    <!-- Projects as case studies -->
+    <section id="projects" class="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 class="section-title reveal" id="projects-title">Featured Work</h2>
+        <p class="section-intro reveal">Selected projects as case studies: the problem, my role, and the decisions that shaped the result.</p>
+
+        <div class="project-filter reveal" role="group" aria-label="Filter projects">
+          <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All Projects</button>
+          <button type="button" class="filter-btn" data-filter="web" aria-pressed="false">Web Apps</button>
+          <button type="button" class="filter-btn" data-filter="design" aria-pressed="false">UI/UX Design</button>
+        </div>
+
+        <div class="case-studies">
+          <!--
+            CASE STUDY TEMPLATE
+            - id: used by skill links and the command palette (keep the "case-" prefix)
+            - data-category: space-separated filter values (web, design)
+            - Replace any <div class="ph"> placeholder with an image, e.g.
+              <img src="images/my-shot.webp" alt="Describe what the screenshot shows" width="1200" height="750" loading="lazy" decoding="async">
+          -->
+
+          <!-- Case study: Virtual Portfolio -->
+          <article class="case-study reveal" id="case-virtual-portfolio" data-category="web design">
+            <figure class="case-cover">
+              <img src="images/Project-VirtualPortfolio.webp" alt="Virtual Portfolio website shown on several screens" width="900" height="900" loading="lazy" decoding="async">
+            </figure>
+            <div class="case-body">
+              <p class="case-eyebrow">Web App · UI/UX</p>
+              <h3 class="case-title">Virtual Portfolio</h3>
+              <p class="case-summary">This site: a virtual CV designed to show how I think as both a developer and a designer, not just list what I've done.</p>
+              <dl class="case-facts">
+                <div><dt>My role</dt><dd>Designer &amp; developer (solo)</dd></div>
+                <div>
+                  <dt>Tech stack</dt>
+                  <dd class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Node build scripts</span></dd>
+                </div>
+              </dl>
+              <div class="project-links">
+                <a href="#" class="btn btn-secondary">View Code</a>
               </div>
-              <div class="badge" data-tech="Node.js">
-                <i data-feather="server" class="badge-icon"></i>
+            </div>
+
+            <details class="case-details">
+              <summary>Read the case study</summary>
+              <div class="case-sections">
+                <section>
+                  <h4>Problem</h4>
+                  <p>Most developer portfolios look the same: a hero, a skills bar chart and a grid of project thumbnails. I wanted mine to show my design thinking, and to make my certificates easy to browse instead of a list of PDF links.</p>
+                </section>
+                <section>
+                  <h4>Approach</h4>
+                  <p>I kept the stack deliberately small (plain HTML, CSS and JavaScript on GitHub Pages) and moved the heavy lifting to build time: a Node script renders certificate thumbnails from the PDFs so visitors never download a PDF until they ask for one.</p>
+                </section>
+                <section>
+                  <h4>Key design decisions</h4>
+                  <ul>
+                    <li>A Ctrl/Cmd+K command palette as a signature interaction for keyboard users.</li>
+                    <li>Skills grouped by area and linked to real work, replacing percentage bars that don't mean anything.</li>
+                    <li>Dark and light themes built on design tokens, following the system preference by default.</li>
+                    <li>Motion that switches off for people who prefer reduced motion.</li>
+                  </ul>
+                </section>
+                <section>
+                  <h4>Outcome</h4>
+                  <p>A fast, accessible portfolio that's easy to keep up to date: adding a certificate is one data entry and one command.</p>
+                </section>
               </div>
-              <div class="badge" data-tech="UI/UX">
-                <i data-feather="layout" class="badge-icon"></i>
+
+              <div class="case-gallery">
+                <figure>
+                  <div class="ph" role="img" aria-label="Screenshot placeholder"><span>Screenshot: certificate gallery</span></div>
+                  <figcaption>Certificate gallery with category filters</figcaption>
+                </figure>
+                <figure>
+                  <div class="ph" role="img" aria-label="Screenshot placeholder"><span>Screenshot: command palette</span></div>
+                  <figcaption>The Ctrl/Cmd+K command palette</figcaption>
+                </figure>
               </div>
-              <div class="badge" data-tech="API">
-                <i data-feather="zap" class="badge-icon"></i>
+
+              <figure class="before-after" style="--pos: 50%">
+                <div class="ba-frame">
+                  <div class="ba-img ba-before"><div class="ph"><span>Before: previous portfolio</span></div></div>
+                  <div class="ba-img ba-after"><div class="ph ph-alt"><span>After: redesigned portfolio</span></div></div>
+                  <span class="ba-handle" aria-hidden="true"></span>
+                  <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Before and after comparison: drag to reveal">
+                </div>
+                <figcaption>Before and after the redesign</figcaption>
+              </figure>
+            </details>
+          </article>
+
+          <!-- Case study: Employee Management System -->
+          <article class="case-study reveal" id="case-employee-management" data-category="web">
+            <figure class="case-cover">
+              <img src="images/Project-EmployeeManagement.webp" alt="Employee Management System dashboards with charts and staff lists" width="900" height="900" loading="lazy" decoding="async">
+            </figure>
+            <div class="case-body">
+              <p class="case-eyebrow">Web App</p>
+              <h3 class="case-title">Employee Management System</h3>
+              <p class="case-summary">A real-time web system used to manage employees of a company.</p>
+              <dl class="case-facts">
+                <div><dt>My role</dt><dd class="todo">Add your role</dd></div>
+                <div>
+                  <dt>Tech stack</dt>
+                  <dd class="project-tech"><span class="tech-tag">Angular</span><span class="tech-tag">TypeScript</span></dd>
+                </div>
+              </dl>
+              <div class="project-links">
+                <a href="#" class="btn btn-secondary">View Code</a>
               </div>
             </div>
-          </div>
-          <!-- Image Glow Effect -->
-          <div class="image-glow-effect"></div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-      <div class="mouse">
-        <div class="wheel"></div>
-      </div>
-      <div class="arrow"></div>
-    </div>
-  </div>
-</section>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <p>
-          I started programming when I was 15 years old, and I've been hooked ever since.
-        </p>
-        <p>
-          I specialize in modern Angular frameworks and have a keen eye for design.
-          My approach combines technical expertise with creative problem-solving to deliver exceptional user
-          experiences.
-        </p>
-        <p>
-          When I'm not coding, you can find me contributing to open-source projects,
-          attending tech meetups, or exploring the latest in VR development.
-        </p>
+            <details class="case-details">
+              <summary>Read the case study</summary>
+              <div class="case-sections">
+                <section><h4>Problem</h4><p class="todo">What problem did the company have? Who were the users?</p></section>
+                <section><h4>Approach</h4><p class="todo">How did you tackle it? Research, planning, architecture.</p></section>
+                <section>
+                  <h4>Key design decisions</h4>
+                  <ul class="todo"><li>Decision and why you made it</li><li>Decision and why you made it</li></ul>
+                </section>
+                <section><h4>Outcome</h4><p class="todo">What changed? Time saved, feedback, numbers if you have them.</p></section>
+              </div>
+              <div class="case-gallery">
+                <figure><div class="ph" role="img" aria-label="Screenshot placeholder"><span>Screenshot</span></div><figcaption class="todo">Caption</figcaption></figure>
+                <figure><div class="ph" role="img" aria-label="Screenshot placeholder"><span>Screenshot</span></div><figcaption class="todo">Caption</figcaption></figure>
+              </div>
+              <figure class="before-after" style="--pos: 50%">
+                <div class="ba-frame">
+                  <div class="ba-img ba-before"><div class="ph"><span>Before</span></div></div>
+                  <div class="ba-img ba-after"><div class="ph ph-alt"><span>After</span></div></div>
+                  <span class="ba-handle" aria-hidden="true"></span>
+                  <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Before and after comparison: drag to reveal">
+                </div>
+                <figcaption class="todo">Before and after</figcaption>
+              </figure>
+            </details>
+          </article>
 
-        <div class="skills-progress">
-          <h3 class="skills-title">My Skills</h3>
-          <div class="progress-item">
-            <div class="progress-label">
-              <span>JavaScript/TypeScript</span>
-              <span>80%</span>
+          <!-- Case study: Landing Pages -->
+          <article class="case-study reveal" id="case-landing-pages" data-category="web design">
+            <figure class="case-cover">
+              <img src="images/Project-LandingPages.webp" alt="A collection of company landing page designs" width="900" height="900" loading="lazy" decoding="async">
+            </figure>
+            <div class="case-body">
+              <p class="case-eyebrow">Web App · UI/UX</p>
+              <h3 class="case-title">Landing Pages</h3>
+              <p class="case-summary">I have designed numerous modern landing pages for companies to showcase their specialities.</p>
+              <dl class="case-facts">
+                <div><dt>My role</dt><dd>Designer &amp; developer</dd></div>
+                <div>
+                  <dt>Tech stack</dt>
+                  <dd class="project-tech"><span class="tech-tag">Angular</span><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span></dd>
+                </div>
+              </dl>
+              <div class="project-links">
+                <a href="#" class="btn btn-secondary">View Code</a>
+              </div>
             </div>
-            <div class="progress-bar">
-              <div class="progress-fill" data-width="80"></div>
-            </div>
-          </div>
-          <div class="progress-item">
-            <div class="progress-label">
-              <span>C#</span>
-              <span>85%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" data-width="85"></div>
-            </div>
-          </div>
-          <div class="progress-item">
-            <div class="progress-label">
-              <span>HTML</span>
-              <span>90%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" data-width="90"></div>
-            </div>
-          </div>
-          <div class="progress-item">
-            <div class="progress-label">
-              <span>CSS</span>
-              <span>95%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" data-width="95"></div>
-            </div>
-          </div>
-          <div class="progress-item">
-            <div class="progress-label">
-              <span>Node.js</span>
-              <span>85%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" data-width="85"></div>
-            </div>
-          </div>
-          <div class="progress-item">
-            <div class="progress-label">
-              <span>UI/UX Design</span>
-              <span>80%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" data-width="80"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Projects Section -->
-<section id="projects" class="projects">
-  <div class="container">
-    <h2 class="section-title">Featured Work</h2>
-    
-    <!-- Project Stats -->
-    <div class="project-stats">
-      <div class="stat-card">
-        <div class="stat-icon">🚀</div>
-        <div class="stat-content">
-          <h3 class="stat-number">18+</h3>
-          <p class="stat-text">Projects Completed</p>
-        </div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">⭐</div>
-        <div class="stat-content">
-          <h3 class="stat-number">100%</h3>
-          <p class="stat-text">Client Satisfaction</p>
-        </div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">⚡</div>
-        <div class="stat-content">
-          <h3 class="stat-number">2+</h3>
-          <p class="stat-text">Years Experience</p>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Project Filter -->
-    <div class="project-filter">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="web">Web Apps</button>
-      <button class="filter-btn" data-filter="design">UI/UX Design</button>
-    </div>
-    
-    <!-- Projects Grid -->
-    <div class="projects-grid">
-      <!-- Project 1 -->
-      <div class="project-card" data-category="web design">
-        <div class="project-image">
-          <div class="image-overlay">
-            <span class="project-category">Web App • UI/UX</span>
-          </div>
-          <img src="images/Project-LandingPages.jpg" alt="Landing Pages">
-        </div>
-        <div class="project-content">
-          <div class="project-header">
-            <h3 class="project-title">Landing Pages</h3>
-            <p class="project-subtitle">
-              I have designed numerous modern landing pages for companies to showcase their specialities.
-            </p>
-          </div>
-          <div class="project-tech">
-            <span class="tech-tag">Angular Framework</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="btn btn-secondary">View Code</a>
-          </div>
-        </div>
-      </div>
+            <details class="case-details">
+              <summary>Read the case study</summary>
+              <div class="case-sections">
+                <section><h4>Problem</h4><p class="todo">What did the companies need from their landing pages?</p></section>
+                <section><h4>Approach</h4><p class="todo">Your process: briefs, moodboards, wireframes, build.</p></section>
+                <section>
+                  <h4>Key design decisions</h4>
+                  <ul class="todo"><li>Decision and why you made it</li><li>Decision and why you made it</li></ul>
+                </section>
+                <section><h4>Outcome</h4><p class="todo">Results: launches, client feedback, conversions.</p></section>
+              </div>
+              <div class="case-gallery">
+                <figure><div class="ph" role="img" aria-label="Screenshot placeholder"><span>Screenshot</span></div><figcaption class="todo">Caption</figcaption></figure>
+                <figure><div class="ph" role="img" aria-label="Screenshot placeholder"><span>Screenshot</span></div><figcaption class="todo">Caption</figcaption></figure>
+              </div>
+              <figure class="before-after" style="--pos: 50%">
+                <div class="ba-frame">
+                  <div class="ba-img ba-before"><div class="ph"><span>Before</span></div></div>
+                  <div class="ba-img ba-after"><div class="ph ph-alt"><span>After</span></div></div>
+                  <span class="ba-handle" aria-hidden="true"></span>
+                  <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Before and after comparison: drag to reveal">
+                </div>
+                <figcaption class="todo">Before and after</figcaption>
+              </figure>
+            </details>
+          </article>
 
-      <!-- Project 2 -->
-      <div class="project-card" data-category="web design">
-        <div class="project-image">
-          <div class="image-overlay">
-            <span class="project-category">Web App • UI/UX</span>
-          </div>
-          <img src="images/Project-VirtualPortfolio.jpg" alt="Virtual Portfolio">
-        </div>
-        <div class="project-content">
-          <div class="project-header">
-            <h3 class="project-title">Virtual Portfolio</h3>
-            <p class="project-subtitle">
-              An immersive virtual portfolio website showing my CV, experience, and projects.
-            </p>
-          </div>
-          <div class="project-tech">
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">HTML</span>
-            <span class="tech-tag">CSS</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="btn btn-secondary">View Code</a>
-          </div>
-        </div>
-      </div>
+          <!-- Placeholder case study: duplicate and fill in, or delete. data-placeholder keeps it out of the hero count. -->
+          <article class="case-study reveal" id="case-new-project-1" data-category="web" data-placeholder>
+            <figure class="case-cover">
+              <div class="ph" role="img" aria-label="Cover image placeholder"><span>Cover image</span></div>
+            </figure>
+            <div class="case-body">
+              <p class="case-eyebrow">Web App <span class="draft-badge">Draft</span></p>
+              <h3 class="case-title todo">Project title</h3>
+              <p class="case-summary todo">One or two sentences: what it is and who it's for.</p>
+              <dl class="case-facts">
+                <div><dt>My role</dt><dd class="todo">Your role</dd></div>
+                <div>
+                  <dt>Tech stack</dt>
+                  <dd class="project-tech"><span class="tech-tag">Angular</span><span class="tech-tag">.NET</span><span class="tech-tag">SQL Server</span></dd>
+                </div>
+              </dl>
+              <div class="project-links">
+                <a href="#" class="btn btn-secondary">View Code</a>
+              </div>
+            </div>
+            <details class="case-details">
+              <summary>Read the case study</summary>
+              <div class="case-sections">
+                <section><h4>Problem</h4><p class="todo">The problem.</p></section>
+                <section><h4>Approach</h4><p class="todo">Your approach.</p></section>
+                <section><h4>Key design decisions</h4><ul class="todo"><li>Decision and why</li></ul></section>
+                <section><h4>Outcome</h4><p class="todo">The outcome.</p></section>
+              </div>
+              <div class="case-gallery">
+                <figure><div class="ph" role="img" aria-label="Screenshot placeholder"><span>Screenshot</span></div><figcaption class="todo">Caption</figcaption></figure>
+                <figure><div class="ph" role="img" aria-label="Screenshot placeholder"><span>Screenshot</span></div><figcaption class="todo">Caption</figcaption></figure>
+              </div>
+            </details>
+          </article>
 
-      <!-- Project 3 -->
-      <div class="project-card" data-category="web">
-        <div class="project-image">
-          <div class="image-overlay">
-            <span class="project-category">Web App</span>
-          </div>
-          <img src="images/Project-EmployeeManagement.jpg" alt="EmployeeManagement">
-        </div>
-        <div class="project-content">
-          <div class="project-header">
-            <h3 class="project-title">Employee Management System</h3>
-            <p class="project-subtitle">
-              A real-time web system used to manage employees of a company.
-            </p>
-          </div>
-          <div class="project-tech">
-            <span class="tech-tag">Angular Framework</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="btn btn-secondary">View Code</a>
-          </div>
+          <article class="case-study reveal" id="case-new-project-2" data-category="design" data-placeholder>
+            <figure class="case-cover">
+              <div class="ph" role="img" aria-label="Cover image placeholder"><span>Cover image</span></div>
+            </figure>
+            <div class="case-body">
+              <p class="case-eyebrow">UI/UX Design <span class="draft-badge">Draft</span></p>
+              <h3 class="case-title todo">Project title</h3>
+              <p class="case-summary todo">One or two sentences: what it is and who it's for.</p>
+              <dl class="case-facts">
+                <div><dt>My role</dt><dd class="todo">Your role</dd></div>
+                <div>
+                  <dt>Tools</dt>
+                  <dd class="project-tech"><span class="tech-tag todo">Tool</span></dd>
+                </div>
+              </dl>
+              <div class="project-links">
+                <a href="#" class="btn btn-secondary">View Design</a>
+              </div>
+            </div>
+            <details class="case-details">
+              <summary>Read the case study</summary>
+              <div class="case-sections">
+                <section><h4>Problem</h4><p class="todo">The problem.</p></section>
+                <section><h4>Approach</h4><p class="todo">Your approach.</p></section>
+                <section><h4>Key design decisions</h4><ul class="todo"><li>Decision and why</li></ul></section>
+                <section><h4>Outcome</h4><p class="todo">The outcome.</p></section>
+              </div>
+              <figure class="before-after" style="--pos: 50%">
+                <div class="ba-frame">
+                  <div class="ba-img ba-before"><div class="ph"><span>Before</span></div></div>
+                  <div class="ba-img ba-after"><div class="ph ph-alt"><span>After</span></div></div>
+                  <span class="ba-handle" aria-hidden="true"></span>
+                  <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Before and after comparison: drag to reveal">
+                </div>
+                <figcaption class="todo">Before and after</figcaption>
+              </figure>
+            </details>
+          </article>
         </div>
       </div>
+    </section>
 
-      <!-- Project 4 -->
-      <div class="project-card" data-category="design">
-        <div class="project-image">
-          <div class="image-overlay">
-            <span class="project-category">UI/UX Design</span>
-          </div>
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="E-commerce Platform">
-        </div>
-        <div class="project-content">
-          <div class="project-header">
-            <h3 class="project-title">E-commerce Platform</h3>
-            <p class="project-subtitle">
-              A complete e-commerce solution with modern UI/UX design and seamless checkout.
-            </p>
-          </div>
-          <div class="project-tech">
-            <span class="tech-tag">Figma</span>
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">Stripe</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="btn btn-secondary">View Design</a>
-            <a href="#" class="btn btn-outline">Case Study</a>
-          </div>
-        </div>
-      </div>
+    <!-- Design process -->
+    <section id="process" class="process" aria-labelledby="process-title">
+      <div class="container">
+        <h2 class="section-title reveal" id="process-title">How I Design</h2>
+        <p class="section-intro reveal">Every project moves through the same four stages, from understanding the problem to shipping working code.</p>
 
-      <!-- Project 5 -->
-      <div class="project-card" data-category="mobile">
-        <div class="project-image">
-          <div class="image-overlay">
-            <span class="project-category">Mobile App</span>
-          </div>
-          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Fitness Tracker">
-        </div>
-        <div class="project-content">
-          <div class="project-header">
-            <h3 class="project-title">Fitness Tracker</h3>
-            <p class="project-subtitle">
-              A mobile app for tracking workouts, nutrition, and health metrics.
-            </p>
-          </div>
-          <div class="project-tech">
-            <span class="tech-tag">React Native</span>
-            <span class="tech-tag">GraphQL</span>
-            <span class="tech-tag">Firebase</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="btn btn-secondary">App Store</a>
-            <a href="#" class="btn btn-outline">View Code</a>
-          </div>
-        </div>
+        <ol class="process-steps">
+          <li class="process-step reveal">
+            <div class="ph" role="img" aria-label="Image placeholder: research"><span>Research image</span></div>
+            <div class="process-text">
+              <span class="process-num" aria-hidden="true">01</span>
+              <h3>Research</h3>
+              <p>I start by asking questions: who the users are, what they're trying to do and what's getting in their way. Requirements and constraints get written down before any pixels.</p>
+            </div>
+          </li>
+          <li class="process-step reveal">
+            <div class="ph" role="img" aria-label="Image placeholder: wireframes"><span>Wireframe image</span></div>
+            <div class="process-text">
+              <span class="process-num" aria-hidden="true">02</span>
+              <h3>Wireframes</h3>
+              <p>Low-fidelity layouts let me test structure and flow quickly. It's cheap to change a sketch and expensive to change a finished screen.</p>
+            </div>
+          </li>
+          <li class="process-step reveal">
+            <div class="ph" role="img" aria-label="Image placeholder: UI design"><span>UI design image</span></div>
+            <div class="process-text">
+              <span class="process-num" aria-hidden="true">03</span>
+              <h3>UI Design</h3>
+              <p>I turn wireframes into polished interfaces: colour, type and spacing as reusable tokens, with contrast and accessibility checked as I go.</p>
+            </div>
+          </li>
+          <li class="process-step reveal">
+            <div class="ph" role="img" aria-label="Image placeholder: build"><span>Build image</span></div>
+            <div class="process-text">
+              <span class="process-num" aria-hidden="true">04</span>
+              <h3>Build</h3>
+              <p>Finally I build it with Angular, .NET and SQL Server, keeping components close to the design system so what ships matches what was designed.</p>
+            </div>
+          </li>
+        </ol>
       </div>
+    </section>
 
-      <!-- Project 6 -->
-      <div class="project-card" data-category="web">
-        <div class="project-image">
-          <div class="image-overlay">
-            <span class="project-category">Web App</span>
-          </div>
-          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="AI Analytics">
-        </div>
-        <div class="project-content">
-          <div class="project-header">
-            <h3 class="project-title">AI Analytics Dashboard</h3>
-            <p class="project-subtitle">
-              AI-powered analytics platform with predictive insights and automated reporting.
-            </p>
-          </div>
-          <div class="project-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">TensorFlow</span>
-            <span class="tech-tag">Vue.js</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="btn btn-secondary">Live Demo</a>
-            <a href="#" class="btn btn-outline">View Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- View More Button -->
-    <div class="view-more">
-      <a href="#" class="btn btn-outline">View All Projects →</a>
-    </div>
-  </div>
-</section>
+    <!-- Certificates gallery (rendered from data/certificates.js) -->
+    <section id="certificates" class="certificates" aria-labelledby="certificates-title">
+      <div class="container">
+        <h2 class="section-title reveal" id="certificates-title">Certificates</h2>
+        <p class="section-intro reveal">Courses I've completed to keep growing. Select a certificate to view or download it.</p>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="contact-wrapper">
-        <form class="contact-form">
-          <div class="form-group">
-            <input type="text" placeholder="Name" required>
-          </div>
-          <div class="form-group">
-            <input type="email" placeholder="Email" required>
-          </div>
-          <div class="form-group">
-            <input type="text" placeholder="Subject" required>
-          </div>
-          <div class="form-group">
-            <textarea placeholder="Message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
+        <div class="project-filter cert-filter reveal" id="certFilter" role="group" aria-label="Filter certificates"></div>
+        <p class="sr-only" id="certStatus" aria-live="polite"></p>
+        <ul class="cert-grid" id="certGrid"></ul>
+        <noscript><p class="section-intro">Enable JavaScript to browse the certificate gallery.</p></noscript>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 class="section-title reveal" id="contact-title">Get In Touch</h2>
+        <div class="contact-wrapper reveal">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="cf-name">Name</label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email</label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="form-group">
+              <label for="cf-subject">Subject</label>
+              <input id="cf-subject" name="subject" type="text" required>
+            </div>
+            <div class="form-group">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="contact-aside" aria-label="Other ways to reach me">
+            <h3>Prefer email?</h3>
+            <p>Write to me directly. I usually reply within a day or two.</p>
+            <div class="email-row">
+              <a class="email-link" id="emailLink" href="#">your.email@example.com</a>
+              <button type="button" class="icon-btn" id="copyEmail" aria-label="Copy email address">
+                <i data-feather="copy" aria-hidden="true"></i>
+              </button>
+            </div>
+            <a href="Danelle_Kruger_CV_Resume.pdf" class="btn btn-outline" download>Download CV</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 CDK DEV. All rights reserved.</p>
-      <div class="social-links">
-        <a href="#" aria-label="GitHub"><i data-feather="github"></i></a>
-        <a href="#" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
-        <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
-      </div>
+      <p>&copy; <span id="year">2026</span> CDK DEV. All rights reserved.</p>
+      <ul class="social-links">
+        <li><a href="#" aria-label="GitHub"><i data-feather="github" aria-hidden="true"></i></a></li>
+        <li><a href="#" aria-label="LinkedIn"><i data-feather="linkedin" aria-hidden="true"></i></a></li>
+        <li><a href="#" aria-label="Twitter"><i data-feather="twitter" aria-hidden="true"></i></a></li>
+      </ul>
+      <p class="footer-hint">Tip: press <kbd data-shortcut-hint>Ctrl K</kbd> to jump anywhere.</p>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.js"></script>
+  <!-- Certificate viewer -->
+  <dialog class="modal cert-modal" id="certModal" aria-labelledby="certModalTitle">
+    <div class="modal-header">
+      <div>
+        <p class="modal-eyebrow" id="certModalMeta"></p>
+        <h2 class="modal-title" id="certModalTitle"></h2>
+      </div>
+      <button type="button" class="icon-btn" data-close aria-label="Close certificate viewer">
+        <i data-feather="x" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="modal-body" id="certModalBody"></div>
+    <div class="modal-footer">
+      <a class="btn btn-primary" id="certDownload" href="#" download>
+        <i data-feather="download" aria-hidden="true"></i> Download PDF
+      </a>
+      <a class="btn btn-outline" id="certOpen" href="#" target="_blank" rel="noopener">Open in new tab</a>
+      <a class="modal-verify" id="certVerify" href="#" target="_blank" rel="noopener">Verify on Udemy</a>
+    </div>
+  </dialog>
+
+  <!-- Command palette -->
+  <dialog class="modal palette" id="palette" aria-label="Command palette">
+    <div class="palette-search">
+      <i data-feather="search" aria-hidden="true"></i>
+      <input type="text" id="paletteInput" placeholder="Jump to a section, open a certificate…" autocomplete="off" spellcheck="false"
+        role="combobox" aria-expanded="true" aria-controls="paletteList" aria-autocomplete="list">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="palette-list" id="paletteList" role="listbox" aria-label="Commands"></ul>
+    <p class="palette-footer" aria-hidden="true"><kbd>↑</kbd><kbd>↓</kbd> navigate <kbd>Enter</kbd> select <kbd>Esc</kbd> close</p>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.js" defer></script>
+  <script src="data/certificates.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 
