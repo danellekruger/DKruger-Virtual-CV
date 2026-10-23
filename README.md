@@ -30,6 +30,21 @@ This is my **personal portfolio (virtual CV) website** built using **HTML**, **C
 
 ---
 
+## ✏️ Updating content
+
+The site is plain HTML/CSS/JS with no build step. Node is only needed for the image scripts (`npm install` once).
+
+| Task | How |
+| --- | --- |
+| Add a certificate | Copy the PDF into `certificates/`, run `npm run thumbs`, then add an entry to `data/certificates.js` |
+| Update images / link preview | Put sources in `images/`, list them in `scripts/optimize-images.mjs`, run `npm run images` |
+| Add a case study | Copy a `<article class="case-study">` block in `index.html` (template notes are in the comment above them) |
+| Contact email / Formspree | Edit `SITE_CONFIG` at the top of `script.js` |
+
+Press **Ctrl/⌘ + K** on the site to open the command palette.
+
+---
+
 ## 📂 Screenshots of web app
 <img width="1875" height="850" alt="Screenshot 2025-07-25 165103" src="https://github.com/user-attachments/assets/69f25196-5033-4433-8e94-f609895b4ecc" />
 <img width="1875" height="865" alt="Screenshot 2025-07-25 165130" src="https://github.com/user-attachments/assets/9aae84c5-49e5-49ed-a3a6-3adb29fa1826" />

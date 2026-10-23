@@ -1,0 +1,13 @@
+{
+  "name": "dkruger-virtual-cv",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "thumbs": "node scripts/generate-thumbnails.mjs",
+    "images": "node scripts/optimize-images.mjs"
+  },
+  "devDependencies": {
+    "@napi-rs/canvas": "^0.1.100",
+    "pdfjs-dist": "^5.6.205"
+  }
+}
